@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title Yobi
+    = stylesheet_link_tag "application"
+    /[if lt IE 8]
+      = stylesheet_link_tag "blueprint/ie.css"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  .container
+    .span-24
+      #top-nav
+        = "top-nav"
+    .span-4
+      #logo
+        %h1 51yobi
+    .span-20.last
+      #search Search
+    .span-6.clear
+      #sidebar sidebar
+    .span-18.last
+      #content
+        = yield
+    .span-24
+      #footer footer
+
