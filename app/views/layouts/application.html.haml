@@ -10,13 +10,17 @@
   .container
     .span-24
       #top-nav
-        = "top-nav"
+        = link_to "categories", admin_categories_path
     .span-4
       #logo
         %h1 51yobi
     .span-20.last
       #search Search
-    .span-6.clear
+    .span-24
+      %ul.tabs
+        - 15.times do |i|
+          %li= link_to "Tab #{i}", root_path
+    .span-6
       #sidebar sidebar
     .span-18.last
       #content

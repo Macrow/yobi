@@ -12,12 +12,18 @@ gem 'json'
 gem 'sass'
 gem 'coffee-script'
 gem 'uglifier'
-
 gem 'jquery-rails'
 
 # haml
 gem 'haml'
 gem 'haml-rails'
+
+gem 'ancestry'
+gem 'foreigner'
+
+group :development do
+  #gem 'hirb-unicode'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'

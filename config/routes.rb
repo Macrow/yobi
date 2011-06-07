@@ -1,4 +1,6 @@
 Yobi::Application.routes.draw do
+  namespace :admin do resources :categories end
+
   resources :products
 
   root :to => "products#index"
