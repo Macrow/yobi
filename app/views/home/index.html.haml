@@ -1,0 +1,6 @@
+- @products.each_with_index do |p, i|
+  - @class = (i+1)%3 == 0 ? "last" : ""
+  .span-6{:class => @class}
+    = div_for p, :class => @class do
+      = p.name
+

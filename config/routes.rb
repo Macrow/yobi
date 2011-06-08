@@ -1,9 +1,18 @@
 Yobi::Application.routes.draw do
-  namespace :admin do resources :categories end
+
+  get "products/index"
+
+  namespace :admin do
+    resources :categories
+    resources :products
+    root :to => "home#index"
+  end
 
   resources :products
+  resources :categories
+  devise_for :users
 
-  root :to => "products#index"
+  root :to => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

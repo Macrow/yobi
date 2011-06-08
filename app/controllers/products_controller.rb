@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_filter :get_categories, :only => [:new, :edit, :create]
+
   # GET /products
   # GET /products.json
   def index
@@ -80,4 +82,20 @@ class ProductsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  private
+
+  def get_categories
+    @categories = ancestry_options(Category.scoped.arrange(:order => 'created_at')) {|i| "#{'-' * i.depth} #{i.name}"}
+  end
+
+  def ancestry_options(items)
+    result = []
+    items.map do |item, sub_items|
+      result << [yield(item), item.id]
+      result += ancestry_options(sub_items) {|i| "#{'-' * i.depth} #{i.name}"}
+    end
+    result
+  end
 end
+

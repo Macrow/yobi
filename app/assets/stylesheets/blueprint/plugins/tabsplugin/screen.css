@@ -24,8 +24,9 @@ http://blueprintcss.org
   float:left;
   line-height:1.5;
   list-style-type:none;
-  margin:0 .25em 0 0;
+  margin:0 .3em 0 0;
   padding:0;
+  border-radius: 6px 6px 0px 0px;
 }
 .tabs li a {
   background:#ddd;
@@ -36,14 +37,15 @@ http://blueprintcss.org
   display:block;
   float:left;
   font-weight:bold;
-  padding:.15em .33em .25em .33em;
+  padding:.15em .5em .25em .5em;
+  border-radius: 6px 6px 0px 0px;
 }
 .tabs li a.selected {
-  background:#666;
-  border:1px solid #666;
+  background:#3364A6;
   border-bottom:none;
   color:#fff;
-  cursor:default;
+  cursor:pointer;
+  border-radius: 6px 6px 0px 0px;
 }
 .tabs li a, .tabs li a:focus, .tabs li a:hover {
   text-decoration:none;

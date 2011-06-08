@@ -8,23 +8,39 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   .container
-    .span-24
-      #top-nav
-        = link_to "categories", admin_categories_path
-    .span-4
+    .span-12
       #logo
-        %h1 51yobi
-    .span-20.last
-      #search Search
+        %h1= link_to image_tag("logo.gif"), root_path
+    .span-11.right
+      #top-nav
+        = user_links
+      #search
+        = form_tag "/search" do
+          = text_field_tag 'name'
+          = submit_tag "Search"
     .span-24
       %ul.tabs
-        - 15.times do |i|
-          %li= link_to "Tab #{i}", root_path
+        %li= link_to "首 页", root_path, :class => "selected"
+        - @root_categories.each do |c|
+          %li= link_to c.name, c
+    .span-24
+      - flash.each do |key,msg|
+        = content_tag :div, msg, :class => key
     .span-6
-      #sidebar sidebar
+      #sidebar= render "shared/sidebar"
     .span-18.last
+      - if controller_name.downcase == "home"
+        .span-12
+          #advert
+        .span-6.last
+          #advert
       #content
         = yield
-    .span-24
-      #footer footer
+    .span-24.top-margin-5
+      #footer
+        了解表单 | 关于我们 | 人才招聘 | 诚征加盟 | 防伪查询 | 汇款信息 | 友情链接 | 联系我们
+        %br/
+        © 2005-2011 西玛表单 版权所有，并保留所有权利。
+        %br/
+        Tel: 400-628-8828 ICP备案证书号:京ICP备08007920号
 

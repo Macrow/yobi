@@ -9,6 +9,9 @@
   .field
     = f.label :name
     = f.text_field :name
+  .field
+    Category
+    = f.select :parent_id, @categories
   .actions
     = f.submit 'Save'
 

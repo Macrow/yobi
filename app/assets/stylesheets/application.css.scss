@@ -1,32 +1,43 @@
 /*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
 */
 
+$background: #F3F3F3;
+$border: darken($background, 20%);
+$top-nav-color: #F3F3F3;
+
 @import "blueprint/screen.css";
 @import "blueprint/plugins/tabsplugin/screen.css";
+@import "navmenu.css";
+@import "home.css.scss";
 @import "products.css.scss";
-
-$background: #FFF9D9;
-$border: darken($background, 20%);
+@import "categories.css.scss";
 
 #top-nav {
-  background: $background;
-  border: 1px solid $border;
+  background: $top-nav-color;
+  border: 1px solid darken($top-nav-color, 20%);
   border-top: none;
-  padding: 2px 5px;
+  padding: 2px 15px;
+  border-radius: 0px 0px 6px 6px;
+  a {
+    text-decoration: none;
+  }
 }
 
 #logo {
+  padding: 20px 0 0 10px;
 }
 
 #search {
   float: right;
+  margin-top: 10px;
 }
 
 #sidebar {
+}
+
+#advert {
+  height: 200px;
   background: $background;
   border: 1px solid $border;
 }
@@ -34,7 +45,14 @@ $border: darken($background, 20%);
 #content {
 }
 
+.top-margin-5 {
+  margin-top: 5px;
+}
+
 #footer {
-  border-top: 3px solid $border;
+  border-top: 2px solid $border;
+  text-align: center;
+  padding: 5px 0;
+  margin-bottom: 20px;
 }
 

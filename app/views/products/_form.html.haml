@@ -10,7 +10,11 @@
     = f.label :name
     = f.text_field :name
   .field
+    categories
+    = f.select :category_id, @categories
+  .field
     = f.label :description
     = f.text_area :description
   .actions
     = f.submit 'Save'
+

@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %title Yobi
+    = stylesheet_link_tag "admin/application"
+    = javascript_include_tag "admin/application"
+    = csrf_meta_tags
+  %body
+    #header
+      #global_links
+        Links
+      %h1= link_to "yobi", admin_root_path
+      #tabs
+        %ul
+          %li= link_to "Home", admin_root_path, :class => "current"
+          %li= link_to "Categories", admin_categories_path
+          %li= link_to "Products", admin_products_path
+    #main
+      #left
+        - flash.each do |key,msg|
+          = content_tag :div, msg, :class => key
+        %h2.head head
+        #screen
+          = yield
+      #right
+        %p sidebar
+    #footer
+      footer
+

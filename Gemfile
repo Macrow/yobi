@@ -20,9 +20,14 @@ gem 'haml-rails'
 
 gem 'ancestry'
 gem 'foreigner'
+gem 'kaminari'
+gem 'carrierwave'
+
+# authentication
+gem 'devise'
 
 group :development do
-  #gem 'hirb-unicode'
+  gem 'hirb-unicode'
 end
 
 # Use unicorn as the web server

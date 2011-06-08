@@ -1,12 +1,15 @@
-class Admin::CategoriesController < ApplicationController
+class Admin::CategoriesController < Admin::ApplicationController
+
+  before_filter :get_categories, :only => [:new, :edit, :create]
+
   # GET /admin/categories
   # GET /admin/categories.json
   def index
-    @categories = Category.all
+    @categories = Category.arrange(:order => :created_at)
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @admin_categories }
+      format.json { render :json => @categories }
     end
   end
 
@@ -60,7 +63,7 @@ class Admin::CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
-        format.html { redirect_to @category, :notice => 'Category was successfully updated.' }
+        format.html { redirect_to [:admin,@category], :notice => 'Category was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
@@ -79,6 +82,22 @@ class Admin::CategoriesController < ApplicationController
       format.html { redirect_to admin_categories_url }
       format.json { head :ok }
     end
+  end
+
+  private
+
+  def get_categories
+    @categories = ancestry_options(Category.scoped.arrange(:order => 'created_at')) {|i| "#{'-' * i.depth} #{i.name}"}
+    @categories.insert(0, ["root", ""])
+  end
+
+  def ancestry_options(items)
+    result = []
+    items.map do |item, sub_items|
+      result << [yield(item), item.id]
+      result += ancestry_options(sub_items) {|i| "#{'-' * i.depth} #{i.name}"}
+    end
+    result
   end
 end
 
