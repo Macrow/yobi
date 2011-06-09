@@ -1,10 +1,14 @@
 Yobi::Application.routes.draw do
 
+  namespace :admin do resources :images end
+
   get "products/index"
 
   namespace :admin do
     resources :categories
-    resources :products
+    resources :products do
+      resources :images
+    end
     root :to => "home#index"
   end
 

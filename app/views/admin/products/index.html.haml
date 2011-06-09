@@ -1,2 +1,5 @@
-%h1 Admin::Products#index
-%p Find me in app/views/admin/products/index.html.haml
+= link_to "New product", new_admin_product_path
+%ul
+  = render @products
+= paginate @products
+

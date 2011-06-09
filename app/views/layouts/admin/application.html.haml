@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Yobi
+    %title= content_for?(:title) ? yield(:title) : "yobi"
     = stylesheet_link_tag "admin/application"
     = javascript_include_tag "admin/application"
     = csrf_meta_tags
@@ -18,8 +18,8 @@
     #main
       #left
         - flash.each do |key,msg|
-          = content_tag :div, msg, :class => key
-        %h2.head head
+          = content_tag :div, msg, :id => "flash_#{key}"
+        %h2.head= content_for?(:title) ? yield(:title) : "yobi"
         #screen
           = yield
       #right

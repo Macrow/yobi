@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Yobi
+    %title= content_for?(:title) ? yield(:title) : "yobi"
     = stylesheet_link_tag "application"
     /[if lt IE 8]
       = stylesheet_link_tag "blueprint/ie.css"
