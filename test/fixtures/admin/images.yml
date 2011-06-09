@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  image: MyString
+  product_id: 1
+  content_type: MyString
+  file_size: 1
+
+two:
+  image: MyString
+  product_id: 1
+  content_type: MyString
+  file_size: 1

@@ -1,0 +1,7 @@
+= div_for image do
+  = image.image.to_s
+  %br
+  = image_tag(image.image_url) if image.image_url
+  %br
+  = link_to 'del', [:admin, @product, image], :confirm => 'Are you sure?', :method => :delete, :remote => true
+

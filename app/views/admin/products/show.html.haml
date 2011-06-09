@@ -1,0 +1,13 @@
+= @product.name
+#images
+  - @product.images.each do |image|
+    = render image
+
+
+#image_upload
+
+
+= javascript_include_tag '/uploadify/swfobject.js'
+= javascript_include_tag '/uploadify/jquery.uploadify.v2.1.4.min.js'
+= image_uploadify
+

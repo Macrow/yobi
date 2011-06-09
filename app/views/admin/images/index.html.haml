@@ -1,0 +1,25 @@
+%h1 Listing admin_images
+
+%table
+  %tr
+    %th Image
+    %th Product
+    %th Content type
+    %th File size
+    %th
+    %th
+    %th
+
+  - @admin_images.each do |admin_image|
+    %tr
+      %td= admin_image.image
+      %td= admin_image.product_id
+      %td= admin_image.content_type
+      %td= admin_image.file_size
+      %td= link_to 'Show', admin_image
+      %td= link_to 'Edit', edit_admin_image_path(admin_image)
+      %td= link_to 'Destroy', admin_image, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Image', new_admin_image_path

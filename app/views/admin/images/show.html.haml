@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Image:
+  = @admin_image.image
+%p
+  %b Product:
+  = @admin_image.product_id
+%p
+  %b Content type:
+  = @admin_image.content_type
+%p
+  %b File size:
+  = @admin_image.file_size
+
+= link_to 'Edit', edit_admin_image_path(@admin_image)
+\|
+= link_to 'Back', admin_images_path
