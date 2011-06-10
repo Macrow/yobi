@@ -22,6 +22,7 @@ gem 'ancestry'
 gem 'foreigner'
 gem 'kaminari'
 gem 'carrierwave'
+gem 'mini_magick'
 
 # authentication
 gem 'devise'

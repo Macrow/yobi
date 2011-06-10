@@ -1,18 +1,19 @@
+#navmenu a{text-decoration:none;}
 .ColLeft{ width:230px; background:#fff;}
-.ColRight{width:740px;background:#fff;padding:5px}
-.ColCenter{width:530px}
-.SideBar{ width:200px}
+.ColRight{width:740px;background:#fff;padding:5px;}
+.ColCenter{width:530px;}
+.SideBar{ width:200px;}
 .extra{ width:300px;}
 
-.CategoryTree{ border:2px #4ca7b8 solid;}
-.CategoryTree .titlebar{height:30px;line-height:30px; background:#4ca7b8}
-.CategoryTree .titlebar h3{ padding-left:15px; color:#fff}
+.CategoryTree{ border:2px #3364A6 solid;}
+.CategoryTree .titlebar{height:20px;line-height:20px; background:#3364A6}
+.CategoryTree .titlebar p{ text-align:center; color:#fff;font-size:1.1em;}
 .CategoryTree ul{ padding:10px 0}
 .CategoryTree ul li{height:26px;line-height:26px; padding:0 10px; position:relative;vertical-align:middle; cursor:pointer;display:block}
-.CategoryTree ul li .tit{border-bottom:1px #e4e4e4 solid;display:block;font-weight:bold;}
-.CategoryTree ul li ul{position:absolute;width:200px;background:#fff;border:1px #666 solid;left:178px;top:0;display:none}
+.CategoryTree ul li .tit{border-bottom:1px #e4e4e4 solid;display:block;font-weight:bold;padding-left:12px;}
+.CategoryTree ul li ul{position:absolute;width:200px;background:#fff;border:1px #666 solid;left:150px;top:0;display:none}
 .CategoryTree ul li ul{  padding:0 10px;}
 .CategoryTree ul li ul li i{color:#666; font-size:11px;;padding:0 10px}
 .CategoryTree ul li.selected{z-index:99; position:relative; }
-.CategoryTree ul li.selected .h2-tit{position:absolute; z-index:88;background:#fff;border:1px #666 solid; border-bottom:3px #666 solid; border-right:0;width:170px;height:24px;line-height:24px; padding-left:2px;margin-left:-4px}
+.CategoryTree ul li.selected .h2-tit{position:absolute; z-index:88;background:#fff;border:1px #666 solid; border-bottom:3px #666 solid; border-right:0;width:129px;height:24px;line-height:24px; padding-left:15px;margin-left:-4px}
 

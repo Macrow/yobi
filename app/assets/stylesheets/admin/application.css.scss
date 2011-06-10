@@ -5,8 +5,10 @@
  *= require_self
 */
 
+@import "css3buttons.css";
 @import "home.css.scss";
 @import "products.css.scss";
+@import "images.css.scss";
 
 body {
 	font-family:"Lucida Grande",verdana,arial,helvetica,sans-serif;
@@ -351,5 +353,11 @@ span input#kase_avatar {
 }
 #footer a:hover {
 	color:#fff
+}
+
+/* ============================================================= */
+
+.center {
+  text-align: center;
 }
 

@@ -6,6 +6,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::ImageScience
 
+  include CarrierWave::MiniMagick
+
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
@@ -32,10 +34,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
+  process :resize_to_fit => [800, 800]
+
   # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process :scale => [50, 50]
-  # end
+  version :thumb do
+    process :resize_to_fill => [120, 120]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
@@ -61,6 +65,11 @@ class ImageUploader < CarrierWave::Uploader::Base
     if @cache_id_was.present? && @cache_id_was =~ /\A[\d]{8}\-[\d]{4}\-[\d]+\-[\d]{4}\z/
       FileUtils.rm_rf(File.join(cache_dir, @cache_id_was))
     end
+  end
+
+  def filename
+    @name ||= Time.now.to_s(:number)
+    "#{@name}#{File.extname(original_filename).downcase}" if original_filename
   end
 end
 

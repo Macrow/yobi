@@ -29,10 +29,10 @@ http://blueprintcss.org
   border-radius: 6px 6px 0px 0px;
 }
 .tabs li a {
-  background:#ddd;
+  background:#F3F3F3;
   border:1px solid #eee;
   border-bottom:none;
-  color:#222;
+  color:#3364A6;
   cursor:pointer;
   display:block;
   float:left;
@@ -51,7 +51,8 @@ http://blueprintcss.org
   text-decoration:none;
 }
 .tabs li a:focus, .tabs li a:hover {
-  color:#555;
+  color:#FFFFFF;
+  background: #3364A6;
   outline:none;
 }
 .tabs li a.selected:focus, .tabs li a.selected:hover {

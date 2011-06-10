@@ -4,3 +4,23 @@
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
 
+.product {
+  .info {
+    background: #EAF0F6;
+    border: 1px solid #D3DBFF;
+    margin: 10px 0;
+
+    .title {
+      text-align: center;
+      background: #D3DBFF;
+      padding: 2px;
+    }
+    .content {
+      padding: 10px;
+      .attr {
+      padding: 3px;
+      }
+    }
+  }
+}
+

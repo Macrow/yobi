@@ -15,7 +15,7 @@ module Admin::ApplicationHelper
           queueSizeLimit  : 24,
           multi           : true,
           auto            : true,
-          buttonText      : 'Upload Image',
+          buttonText      : 'Upload Images',
           scriptData      : {
             '_http_accept': 'application/javascript',
             '#{session_key_name}' : encodeURIComponent('#{u(cookies[session_key_name])}'),
@@ -26,6 +26,14 @@ module Admin::ApplicationHelper
       });
     </script>
     }.gsub(/[\n ]+/, ' ').strip.html_safe
+  end
+
+  def uploadify_js
+    content_for :script do
+      concat javascript_include_tag("/uploadify/jquery.uploadify.v2.1.4.min.js")
+      concat javascript_include_tag("/uploadify/swfobject.js")
+      concat image_uploadify
+    end
   end
 end
 

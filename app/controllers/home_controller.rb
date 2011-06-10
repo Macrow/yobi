@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.scoped.includes(:images)
   end
 end
 

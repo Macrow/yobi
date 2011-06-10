@@ -6,4 +6,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require lightbox/jquery.lightbox.min.js
 

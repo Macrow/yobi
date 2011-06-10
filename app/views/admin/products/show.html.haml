@@ -1,13 +1,21 @@
-= @product.name
-#images
-  - @product.images.each do |image|
-    = render image
+- title @product.name
+= uploadify_js
 
-
-#image_upload
-
-
-= javascript_include_tag '/uploadify/swfobject.js'
-= javascript_include_tag '/uploadify/jquery.uploadify.v2.1.4.min.js'
-= image_uploadify
+= div_for @product do
+  .info
+    .title 产品目录
+    .content
+      .attr= @product.category.name
+  .info
+    .title 产品信息
+    .content
+      .attr= "产品名称：#{@product.name}"
+      .attr= "零售价格：#{@product.retail_price}"
+      .attr= "友比价格：#{@product.present_price}"
+      .attr= "库存数量：#{@product.stock_count}"
+  .info
+    .title 展示图片
+    #images.content
+      = render @product.images
+  #image_upload
 

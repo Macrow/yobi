@@ -1,12 +1,13 @@
-.ColLeft.fl
-  .CategoryTree
-    .titlebar
-      %h3 详细分类
-    %ul
-      - @root_categories.each do |c|
-        %li
-          = link_to c.name, c, :class => "tit"
-          %ul
-            - c.children.each do |cc|
-              %li= link_to cc.name, cc
+#navmenu
+  .ColLeft.fl
+    .CategoryTree
+      .titlebar
+        %p 详细分类
+      %ul
+        - @root_categories.each do |c|
+          %li
+            = link_to c.name, c, :class => "tit"
+            %ul
+              - c.children.each do |cc|
+                %li= link_to cc.name, cc
 
