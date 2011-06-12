@@ -11,7 +11,7 @@ http://blueprintcss.org
 ----------------------------------------------------------------------- */
 
 .tabs {
-  border-bottom:1px solid #ccc;
+  border-bottom:2px solid #2E6BBC;
   height:auto;
   margin:0 0 .75em 0;
   overflow:auto;
@@ -19,7 +19,7 @@ http://blueprintcss.org
 }
 * html .tabs { height:1%; /* fixing IE 6 */ }
 .tabs li {
-  border:1px solid #ccc;
+  border:1px solid #2E6BBC;
   border-bottom:none;
   float:left;
   line-height:1.5;
@@ -30,18 +30,17 @@ http://blueprintcss.org
 }
 .tabs li a {
   background:#F3F3F3;
-  border:1px solid #eee;
   border-bottom:none;
-  color:#3364A6;
+  color:#2E6BBC;
   cursor:pointer;
   display:block;
   float:left;
   font-weight:bold;
   padding:.15em .5em .25em .5em;
-  border-radius: 6px 6px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
 }
 .tabs li a.selected {
-  background:#3364A6;
+  background: #2E6BBC;
   border-bottom:none;
   color:#fff;
   cursor:pointer;
@@ -52,7 +51,7 @@ http://blueprintcss.org
 }
 .tabs li a:focus, .tabs li a:hover {
   color:#FFFFFF;
-  background: #3364A6;
+  background: #2E6BBC;
   outline:none;
 }
 .tabs li a.selected:focus, .tabs li a.selected:hover {

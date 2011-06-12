@@ -1,9 +1,11 @@
-- @products.each_with_index do |p, i|
-  - @class = (i+1)%3 == 0 ? "last" : ""
-  .span-6{:class => @class}
-    = div_for p, :class => @class do
-      - if p.images.first.nil?
-        = image_tag "/images/no-pic.png", :size => "120x120"
-      - else
-        = image_tag p.images.first.image.thumb.url
+#elite
+  .head
+    .title
+    .more 床上用品 | 毛巾浴巾 | 厨房用品 | 日用杂品 | 小家具
+  .body= render @products
+#elite
+  .head
+    .title
+    .more 床上用品 | 毛巾浴巾 | 厨房用品 | 日用杂品 | 小家具
+  .body= render @products
 

@@ -1,6 +1,18 @@
 .product {
+  width: 170px;
   background: $background;
-  border: 1px solid $border;
-  margin-top: 5px;
+  margin: 1px;
+  display: inline-block;
+  .image {
+    text-align: center;
+  }
+  .column {
+    display: block;
+    padding-left: 30px;
+    font-size: 1em;
+    span.off { text-decoration: line-through; }
+    span.red { color: #D10015; }
+    span.bold { font-weight: bold; }
+  }
 }
 

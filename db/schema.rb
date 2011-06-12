@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20110610124728) do
     t.integer  "product_id"
     t.string   "content_type"
     t.integer  "file_size"
+    t.boolean  "is_major",     :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20110610124728) do
     t.decimal  "retail_price",  :precision => 8, :scale => 2
     t.decimal  "present_price", :precision => 8, :scale => 2
     t.integer  "stock_count"
+    t.boolean  "elite",                                       :default => false
   end
 
   create_table "users", :force => true do |t|

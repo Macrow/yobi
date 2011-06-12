@@ -10,4 +10,9 @@
             %ul
               - c.children.each do |cc|
                 %li= link_to cc.name, cc
+- if controller_name.downcase == "home"
+  #leftbox
+    .head 热销产品
+    .body
+      = render @good_products
 

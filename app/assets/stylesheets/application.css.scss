@@ -36,10 +36,8 @@ $top-nav-color: #F3F3F3;
 #sidebar {
 }
 
-#advert {
+#slide {
   height: 200px;
-  background: $background;
-  border: 1px solid $border;
 }
 
 #content {
@@ -50,7 +48,7 @@ $top-nav-color: #F3F3F3;
 }
 
 #footer {
-  border-top: 2px solid $border;
+  border-top: 2px solid #3364A6;
   text-align: center;
   padding: 5px 0;
   margin-bottom: 20px;

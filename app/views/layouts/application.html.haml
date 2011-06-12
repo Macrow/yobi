@@ -10,7 +10,7 @@
   .container
     .span-12
       #logo
-        %h1= link_to image_tag("logo.gif"), root_path
+        %h1= link_to image_tag("yobi.gif"), root_path
     .span-11.right
       #top-nav
         = user_links
@@ -31,10 +31,10 @@
     .span-18.last
       - if controller_name.downcase == "home"
         .span-12
-          #advert
+          #slide= render "shared/slide"
         .span-6.last
-          #advert
-      #content
+          #news= render "shared/news"
+      .span-18
         = yield
     .span-24.top-margin-5
       #footer
