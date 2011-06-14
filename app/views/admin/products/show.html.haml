@@ -1,21 +1,28 @@
 - title @product.name
-= uploadify_js
-
+= uploadify_js(@product)
+.float_right
+  = link_to "编辑", edit_admin_product_path(@product), :class => "button"
+  = link_to "返回", admin_products_path, :class => "button"
 = div_for @product do
   .info
     .title 产品目录
     .content
-      .attr= @product.category.name
+      .attr= category_path(@product.category)
   .info
     .title 产品信息
     .content
       .attr= "产品名称：#{@product.name}"
-      .attr= "零售价格：#{@product.retail_price}"
-      .attr= "友比价格：#{@product.present_price}"
+      .attr= "是否推荐：#{@product.elite}"
+      .attr= "零售价格：#{show_money(@product.retail_price)}"
+      .attr= "友比价格：#{show_money(@product.present_price)}"
       .attr= "库存数量：#{@product.stock_count}"
   .info
     .title 展示图片
     #images.content
       = render @product.images
   #image_upload
+  .info
+    .title 详细介绍
+    .content
+      .attr= @product.description.html_safe
 

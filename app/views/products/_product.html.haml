@@ -1,6 +1,6 @@
 = div_for product do
   .image= product_major_image(product)
-  .column= product.name
-  .column= "零售价格：<span class='off'>#{product.retail_price}</span> 元".html_safe
-  .column= "<span class='red bold'>友比价格：#{product.present_price} 元</span>".html_safe
+  .column= link_to product.name, product
+  .column= "零售价格：<span class='off'>#{show_money(product.retail_price)}</span>".html_safe
+  .column= "<span class='red bold'>友比价格：#{show_money(product.present_price)}</span>".html_safe
 

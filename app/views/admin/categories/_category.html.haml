@@ -1,6 +1,6 @@
 = div_for category do
-  = category.name
-  = link_to 'Show', admin_category_path(category)
-  = link_to 'Edit', edit_admin_category_path(category)
-  = link_to 'Destroy', admin_category_path(category), :confirm => 'Are you sure?', :method => :delete
+  = link_to category.name, admin_category_path(category)
+  = link_to '编辑', edit_admin_category_path(category), :class => "button"
+  = link_to '删除', admin_category_path(category), :confirm => 'Are you sure?', :method => :delete, :class => "negative button"
+  = link_to "<span class='plus icon'></span>在此目录创建产品".html_safe, new_admin_product_path(:category_id => category.id), :class => "button"
 

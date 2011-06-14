@@ -1,0 +1,11 @@
+- title "文章管理"
+%p
+  %table.table
+    %tbody
+      %tr
+        %th 题目
+        %th 作者
+        %th{:width => "120"} 操作
+      = render @articles
+  = paginate @articles
+

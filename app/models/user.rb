@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   attr_accessible :login, :user_name, :email, :password, :password_confirmation, :remember_me
   attr_accessor :login
 
+  has_many :articles, :dependent => :nullify
+
   def admin?
     admin
   end

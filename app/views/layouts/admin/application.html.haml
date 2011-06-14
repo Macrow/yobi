@@ -8,14 +8,9 @@
     = csrf_meta_tags
   %body
     #header
-      #global_links
-        Links
+      #global_links= admin_user_links
       %h1= link_to "yobi", admin_root_path
-      #tabs
-        %ul
-          %li= link_to "Home", admin_root_path, :class => "current"
-          %li= link_to "Categories", admin_categories_path
-          %li= link_to "Products", admin_products_path
+      #tabs= render "admin/shared/tabs"
     #main
       #left
         - flash.each do |key,msg|
@@ -23,8 +18,7 @@
         %h2.head= content_for?(:title) ? yield(:title) : "yobi"
         #screen
           = yield
-      #right
-        %p sidebar
+      #right= yield_or_partial(:sidebar, yield(:sidebar))
     #footer
       footer
 

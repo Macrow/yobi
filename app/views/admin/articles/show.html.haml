@@ -1,0 +1,7 @@
+- title @article.title
+= div_for @article do
+  .float_right
+    = link_to "编辑", edit_admin_article_path(@article), :class => "button"
+    = link_to "返回", admin_articles_path, :class => "button"
+  .content= @article.content.html_safe
+

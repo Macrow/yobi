@@ -1,6 +1,6 @@
 class Admin::CategoriesController < Admin::ApplicationController
 
-  before_filter :get_categories, :only => [:new, :edit, :create]
+  before_filter :get_categories_tree, :only => [:new, :edit, :create, :update]
 
   # GET /admin/categories
   # GET /admin/categories.json
@@ -86,18 +86,8 @@ class Admin::CategoriesController < Admin::ApplicationController
 
   private
 
-  def get_categories
-    @categories = ancestry_options(Category.scoped.arrange(:order => 'created_at')) {|i| "#{'-' * i.depth} #{i.name}"}
-    @categories.insert(0, ["root", ""])
-  end
-
-  def ancestry_options(items)
-    result = []
-    items.map do |item, sub_items|
-      result << [yield(item), item.id]
-      result += ancestry_options(sub_items) {|i| "#{'-' * i.depth} #{i.name}"}
-    end
-    result
+  def get_categories_tree
+    @categories = Category.get_categories_tree(true)
   end
 end
 

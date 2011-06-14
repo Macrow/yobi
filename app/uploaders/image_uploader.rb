@@ -15,7 +15,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{Time.now.strftime("%Y-%m")}"
+    "uploads/product_images/#{Time.now.strftime("%Y-%m")}"
   end
 
   def cache_dir
@@ -34,7 +34,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  process :resize_to_fit => [800, 800]
+  # process :resize_to_fit => [800, 800]
 
   # Create different versions of your uploaded files:
   version :thumb do

@@ -1,5 +1,13 @@
-= link_to "New product", new_admin_product_path
-%ul
-  = render @products
-= paginate @products
+- title "产品管理"
+%p
+  %table.table
+    %tbody
+      %tr
+        %th 名称
+        %th 目录
+        %th 实际价格
+        %th 库存数量
+        %th{:width => "120"} 操作
+      = render @products
+  = paginate @products
 

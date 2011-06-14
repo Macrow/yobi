@@ -1,0 +1,9 @@
+<% if @image.valid? %>
+  $("#image_<%=@image.id%>").replaceWith("<%= escape_javascript(render @image) %>");
+  <% unless @orgin_major_image.nil? %>
+    $("#image_<%=@orgin_major_image.id%>").replaceWith("<%= escape_javascript(render @orgin_major_image) %>");
+  <% end %>
+<% else %>
+  alert("Something wrong!");
+<% end %>
+

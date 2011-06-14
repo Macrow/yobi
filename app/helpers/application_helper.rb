@@ -25,5 +25,9 @@ module ApplicationHelper
     end
     output.html_safe
   end
+
+  def show_money(number)
+    number_to_currency(number, :unit => "￥")
+  end
 end
 

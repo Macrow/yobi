@@ -1,8 +1,8 @@
-class Admin::ImagesController < ApplicationController
+class Admin::ImagesController < Admin::ApplicationController
   # GET /admin/images
   # GET /admin/images.json
   def index
-    @images = Admin::Image.all
+    @images = Image.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class Admin::ImagesController < ApplicationController
   # GET /admin/images/1
   # GET /admin/images/1.json
   def show
-    @image = Admin::Image.find(params[:id])
+    @image = Image.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class Admin::ImagesController < ApplicationController
   # GET /admin/images/new
   # GET /admin/images/new.json
   def new
-    @image = Admin::Image.new
+    @image = Image.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,7 +34,7 @@ class Admin::ImagesController < ApplicationController
 
   # GET /admin/images/1/edit
   def edit
-    @image = Admin::Image.find(params[:id])
+    @image = Image.find(params[:id])
   end
 
   # POST /admin/images
@@ -42,6 +42,9 @@ class Admin::ImagesController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @image = @product.images.build(params[:image])
+    if @product.major_image.nil?
+      @image.is_major = true
+    end
 
     respond_to do |format|
       if @image.save
@@ -51,6 +54,7 @@ class Admin::ImagesController < ApplicationController
       else
         format.html { render :action => "new" }
         format.json { render :json => @image.errors, :status => :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -58,15 +62,20 @@ class Admin::ImagesController < ApplicationController
   # PUT /admin/images/1
   # PUT /admin/images/1.json
   def update
-    @image = Admin::Image.find(params[:id])
+    @product = Product.find(params[:product_id], :include => :major_image)
+    @image = Image.find(params[:id])
+    @orgin_major_image = @product.major_image
+    @orgin_major_image.update_attribute(:is_major, false) unless @orgin_major_image.nil?
 
     respond_to do |format|
       if @image.update_attributes(params[:image])
         format.html { redirect_to @image, :notice => 'Image was successfully updated.' }
         format.json { head :ok }
+        format.js
       else
         format.html { render :action => "edit" }
         format.json { render :json => @image.errors, :status => :unprocessable_entity }
+        format.js
       end
     end
   end

@@ -1,0 +1,7 @@
+#news
+  .head 最新动态
+  .body
+    %ul
+      - @articles.each do |article|
+        %li= link_to article.short_title, article
+

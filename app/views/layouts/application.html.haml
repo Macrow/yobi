@@ -6,14 +6,14 @@
     /[if lt IE 8]
       = stylesheet_link_tag "blueprint/ie.css"
     = javascript_include_tag "application"
+    = yield(:script)
     = csrf_meta_tags
   .container
     .span-12
       #logo
-        %h1= link_to image_tag("yobi.gif"), root_path
+        %h1= link_to image_tag("/images/yobi.gif"), root_path
     .span-11.right
-      #top-nav
-        = user_links
+      #top-nav= user_links
       #search
         = form_tag "/search" do
           = text_field_tag 'name'
@@ -26,6 +26,8 @@
     .span-24
       - flash.each do |key,msg|
         = content_tag :div, msg, :class => key
+    - if controller_name.downcase != "home"
+      .span-24 Nav
     .span-6
       #sidebar= render "shared/sidebar"
     .span-18.last
@@ -33,14 +35,9 @@
         .span-12
           #slide= render "shared/slide"
         .span-6.last
-          #news= render "shared/news"
+          #news= render "shared/articles"
       .span-18
         = yield
     .span-24.top-margin-5
-      #footer
-        了解表单 | 关于我们 | 人才招聘 | 诚征加盟 | 防伪查询 | 汇款信息 | 友情链接 | 联系我们
-        %br/
-        © 2005-2011 西玛表单 版权所有，并保留所有权利。
-        %br/
-        Tel: 400-628-8828 ICP备案证书号:京ICP备08007920号
+      #footer= render "shared/footer"
 

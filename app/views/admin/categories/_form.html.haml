@@ -1,17 +1,20 @@
-= form_for [:admin, @category] do |f|
-  -if @category.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
-      %ul
-        - @category.errors.full_messages.each do |msg|
-          %li= msg
+.form
+  = form_for [:admin, @category] do |f|
+    -if @category.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
+        %ul
+          - @category.errors.full_messages.each do |msg|
+            %li= msg
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    Category
-    = f.select :parent_id, @categories
-  .actions
-    = f.submit 'Save'
+    .field
+      = f.label :name
+      = f.text_field :name
+    .field
+      = f.label :category
+      = f.select :parent_id, @categories
+    .actions
+      = f.submit
+      或者
+      = link_to "返回", admin_categories_path
 

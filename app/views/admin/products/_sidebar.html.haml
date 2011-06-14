@@ -1,0 +1,8 @@
+%h2 快捷工具
+%ul
+  %li
+    = form_tag(admin_products_path, :method => :get) do
+      = text_field_tag("search", params[:search])
+      = submit_tag "搜索"
+  %li= link_to "<span class='plus icon'></span>新建产品".html_safe, new_admin_product_path, :class => "big button"
+
