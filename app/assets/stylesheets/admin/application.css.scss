@@ -7,6 +7,13 @@
 
 @import "css3buttons.css";
 
+/* ======== general ======== */
+.top-margin-5 {
+  margin-top: 5px;
+}
+.top-margin-10 {
+  margin-top: 10px;
+}
 /* ======== product ======== */
 .product {
   .info {
@@ -24,6 +31,70 @@
       .attr {
       padding: 3px;
       }
+    }
+  }
+}
+/* ======== comment ======== */
+.comment {
+  margin: 5px;
+  font-size: 1em;
+  .title {
+    padding: 5px;
+    background: #eee;
+    height: 20px;
+    .name {
+      font-weight: bold;
+      float: left;
+    }
+    .product {
+      float: left;
+      margin-right: 20px;
+    }
+    .author {
+      float: left;
+    }
+    .tool {
+      float: right;
+    }
+  }
+  .body {
+    padding: 10px;
+  }
+}
+form.edit_comment {
+  margin: 5px 0;
+  padding: 10px;
+  background: #D8DCEF;
+  border: 1px solid #204CA0;
+  #error_explanation {
+    border: 1px solid #F07746;
+    margin: 10px;
+    padding: 10px;
+    background: #FFF0EB;
+  }
+  .field {
+    margin: 5px;
+    padding: 5px;
+    label {
+      float: left;
+      width: 60px;
+      overflow: hidden;
+      text-align: right;
+      padding: 5px 10px 0 0;
+    }
+    input {
+      width: 600px;
+    }
+    textarea {
+      height: 120px;
+      width: 600px;
+    }
+  }
+  .field_with_errors {
+    color: #F07746;
+    input {
+      border: 1px solid #F07746;
+      background: #FFF0EB;
     }
   }
 }
@@ -49,6 +120,25 @@
   padding: 15px;
   .content {
     padding-top: 35px;
+  }
+}
+/* ======== user ======== */
+.user {
+  padding: 50px 15px 15px 15px;
+  font-size: 1.1em;
+  line-height: 25px;
+  .column {
+    border-bottom: 1px solid #eee;
+    height: 25px;
+    .title {
+      width: 120px;
+      text-align: right;
+      float: left;
+      margin-right: 20px;
+    }
+    .attr {
+
+    }
   }
 }
 /* ======== application ======== */

@@ -29,23 +29,22 @@ module Admin::ApplicationHelper
     output.html_safe
   end
 
-  def tab_to(name, all_options = nil)
-    url = all_options.is_a?(Array) ? all_options[0].merge({:only_path => false}) : "#"
-    current_url = url_for(:action => controller.action_name, :only_path => false)
-    html_options = {}
-    if all_options.is_a?(Array)
-      all_options.each do |o|
-        if url_for(o.merge({:only_path => false})) == current_url
-          html_options = {:class => "current"}
-          break
-        end
-      end
+  def tab_to(name, c_name, a_name = "index")
+    url = url_for(:controller => "admin/#{c_name}", :action => a_name)
+    if controller_name.downcase == c_name
+      html_options = {:class => "current"}
     end
     link_to(name, url, html_options)
   end
 
   def yield_or_partial(message, yield_message)
     content_for?(message) ? yield_message : render("admin/#{controller_name}/#{message}")
+  end
+
+  def nested_categories(categories)
+    categories.map do |category, sub_categories|
+      render(category) + content_tag(:div, nested_categories(sub_categories), :class => "nested_categories")
+    end.join.html_safe
   end
 
   def category_path(category)

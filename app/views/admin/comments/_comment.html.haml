@@ -1,0 +1,10 @@
+= div_for comment do
+  .title
+    .name= comment.title
+    .product= "[#{link_to comment.commentable.name, [:admin, comment.commentable]}]".html_safe
+    .author= "#{link_to comment.user.user_name, [:admin, comment.user]} 发表于 #{time_ago_in_words(comment.created_at)} 前".html_safe
+    .tool
+      =link_to "编辑", edit_admin_product_comment_path(@owner, comment), :remote => true
+      =link_to "删除", admin_product_comment_path(@owner, comment), :method => :delete, :confirm => "Are you sure?", :remote => true
+  .body= comment.comment
+

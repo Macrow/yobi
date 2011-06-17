@@ -1,0 +1,13 @@
+- title "用户管理"
+%p
+  %table.table
+    %tbody
+      %tr
+        %th 用户名
+        %th 邮箱地址
+        %th 管理员
+        %th 评论
+        %th{:width => "150"} 操作
+      = render @users
+  = paginate @users
+

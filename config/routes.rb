@@ -1,6 +1,8 @@
 Yobi::Application.routes.draw do
 
-  resources :products
+  resources :products do
+    resources :comments, :only => [:create]
+  end
   resources :categories
   resources :articles, :only => [:show]
   devise_for :users
@@ -10,9 +12,18 @@ Yobi::Application.routes.draw do
   namespace :admin do
     resources :categories
     resources :products do
-      resources :images
+      resources :images, :only => [:create, :update, :destroy]
+      resources :comments, :only => [:index, :edit, :update, :destroy] do
+        get "destory_all", :on => :collection
+      end
     end
     resources :articles
+    resources :users do
+      resources :comments, :only => [:index, :edit, :update, :destroy] do
+        get "destory_all", :on => :collection
+      end
+      get "admins", :on => :collection
+    end
     match "/settings" => "settings#index"
     resources :dimages, :only => [:index, :create, :destroy]
     root :to => "home#index"

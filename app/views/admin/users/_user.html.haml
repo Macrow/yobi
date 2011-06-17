@@ -1,0 +1,10 @@
+%tr{:class => cycle(:even, :odd)}
+  %td= link_to user.user_name, admin_user_path(user)
+  %td= mail_to user.email
+  %td= "#{user.admin? ? '<span style=\'color:red\'>是</span>' : '否'}".html_safe
+  %td= user.comments.count
+  %td
+    = link_to "编辑", edit_admin_user_path(user), :class => "pill button"
+    = link_to "评论", admin_user_comments_path(user), :class => "pill positive button"
+    = link_to "删除", admin_user_path(user), :method => :delete, :confirm => "Are you sure?", :class => "pill negative button"
+

@@ -9,35 +9,26 @@
     = yield(:script)
     = csrf_meta_tags
   .container
-    .span-12
+    .span-24
+      #top-nav= user_links
+    .span-24
       #logo
         %h1= link_to image_tag("/images/yobi.gif"), root_path
-    .span-11.right
-      #top-nav= user_links
-      #search
-        = form_tag "/search" do
-          = text_field_tag 'name'
-          = submit_tag "Search"
-    .span-24
-      %ul.tabs
-        %li= link_to "首 页", root_path, :class => "selected"
-        - @root_categories.each do |c|
-          %li= link_to c.name, c
-    .span-24
+      #tab
+        %ul.tabs
+          %li= link_to "首 页", root_path, :class => "selected"
+          - @root_categories.each do |c|
+            %li= link_to c.name, c
+    .span-24= render "shared/tabs_tools"
+    .span-6= render "shared/sidebar"
+    .span-18.last.top-margin-5
       - flash.each do |key,msg|
         = content_tag :div, msg, :class => key
     - if controller_name.downcase != "home"
-      .span-24 Nav
-    .span-6
-      #sidebar= render "shared/sidebar"
-    .span-18.last
-      - if controller_name.downcase == "home"
-        .span-12
-          #slide= render "shared/slide"
-        .span-6.last
-          #news= render "shared/articles"
-      .span-18
-        = yield
-    .span-24.top-margin-5
-      #footer= render "shared/footer"
+      .span-18.last= show_nav_path
+    - else
+      .span-12= render "shared/slide"
+      .span-6.last= render "shared/articles"
+    .span-18.last= yield
+    .span-24= render "shared/footer"
 

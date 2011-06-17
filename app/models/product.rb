@@ -8,6 +8,8 @@ class Product < ActiveRecord::Base
 
   before_save :verify_safe
 
+  acts_as_commentable
+
   private
 
   def verify_safe

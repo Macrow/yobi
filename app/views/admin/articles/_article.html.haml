@@ -1,6 +1,9 @@
 %tr{:class => cycle(:even, :odd)}
   %td= link_to article.title, admin_article_path(article)
-  %td= link_to article.user.user_name, "#" #admin_user_path(article.user)
+  - if article.user.nil?
+    %td= "<span style='color:red'>作者已被删除</span>".html_safe
+  - else
+    %td= link_to article.user.user_name, admin_user_path(article.user)
   %td
     = link_to "编辑", edit_admin_article_path(article), :class => "pill button"
     = link_to "删除", admin_article_path(article), :method => :delete, :confirm => "Are you sure?", :class => "pill negative button"

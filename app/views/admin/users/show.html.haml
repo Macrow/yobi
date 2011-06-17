@@ -1,0 +1,27 @@
+- title "#{@user.user_name}"
+.top-margin-5.float_right
+  = link_to "编辑", edit_admin_user_path(@user), :class => "button"
+  = link_to "返回", admin_users_path, :class => "button"
+= div_for @user do
+  .column
+    .title 用户名：
+    .attr= @user.user_name
+  .column
+    .title 是否为管理员：
+    .attr= "#{@user.admin? ? '<span style=\'color:red\'>是</span>' : '否'}".html_safe
+  .column
+    .title 邮箱：
+    .attr= mail_to @user.email
+  .column
+    .title 注册时间：
+    .attr= @user.created_at.to_s(:db)
+  .column
+    .title 最后登录：
+    .attr= @user.last_sign_in_at.to_s(:db)
+  .column
+    .title 最后登录ip：
+    .attr= @user.last_sign_in_ip
+  .column
+    .title 登录次数：
+    .attr= @user.sign_in_count
+

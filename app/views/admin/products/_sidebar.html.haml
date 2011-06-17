@@ -5,4 +5,6 @@
       = text_field_tag("search", params[:search])
       = submit_tag "搜索"
   %li= link_to "<span class='plus icon'></span>新建产品".html_safe, new_admin_product_path, :class => "big button"
+  - if action_name =~ /show|edit/i
+    %li= link_to "<span class='mail icon'></span>共#{@product.comments.count}条评论".html_safe, admin_product_comments_path(@product), :class => "big button"
 

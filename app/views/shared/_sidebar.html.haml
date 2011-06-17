@@ -1,18 +1,19 @@
-#navmenu
-  .ColLeft.fl
-    .CategoryTree
-      .titlebar
-        %p 详细分类
-      %ul
-        - @root_categories.each do |c|
-          %li
-            = link_to c.name, c, :class => "tit"
-            %ul
-              - c.children.each do |cc|
-                %li= link_to cc.name, cc
-- if controller_name.downcase == "home"
-  #leftbox
-    .head 热销产品
-    .body
-      = render @good_products
+#sidebar
+  #navmenu
+    .ColLeft.fl
+      .CategoryTree
+        .title-bottom
+        %ul
+          - @root_categories.each do |c|
+            %li
+              .icon
+              = link_to c.name, c, :class => "tit"
+              %ul
+                - c.children.each do |cc|
+                  %li= link_to cc.name, cc
+  - if controller_name =~ /home|categories|product/i
+    #leftbox
+      .head 热销产品
+      .body
+        = render @good_products
 

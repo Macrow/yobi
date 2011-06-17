@@ -1,0 +1,5 @@
+%h2 快捷工具
+%ul
+  %li= link_to "<span class='leftarrow icon'></span>返回#{@owner_name}".html_safe, [:admin, @owner], :class => "big button"
+  %li= link_to "<span class='plus icon'></span>删除全部评论".html_safe, @owner_destroy_all_comments_path, :confirm => "Are you sure?", :class => "big button"
+

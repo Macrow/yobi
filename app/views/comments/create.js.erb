@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+   <% if @comment.valid? %>
+    $("#comments").append("<%= escape_javascript(render @comment) %>");
+    $("#new_comment :text, textarea").val("");
+  <% elsif @comment.errors.messages.include?(:title) %>
+    alert("请填写评论标题！");
+  <% elsif @comment.errors.messages.include?(:comment) %>
+    alert("评论内容不能为空！");
+  <% end %>
+<% else %>
+  alert("请登录后发表评论！");
+<% end %>
+

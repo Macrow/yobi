@@ -1,0 +1,8 @@
+<% if @comment.valid? %>
+  $("form#edit_comment_<%= @comment.id %>").replaceWith("<%= escape_javascript(render @comment) %>");
+<% elsif @comment.errors.messages.include?(:title) %>
+  alert("请填写评论标题！");
+<% elsif @comment.errors.messages.include?(:comment) %>
+  alert("评论内容不能为空！");
+<% end %>
+

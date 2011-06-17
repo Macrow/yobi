@@ -1,0 +1,6 @@
+%h2 快捷工具
+%ul
+  %li= link_to "<span class='lock icon'></span>查看所有管理员".html_safe, admins_admin_users_path, :class => "big button"
+  - if action_name =~ /show|edit/i
+    %li= link_to "<span class='mail icon'></span>共#{@user.comments.count}条评论".html_safe, admin_user_comments_path(@user), :class => "big button"
+

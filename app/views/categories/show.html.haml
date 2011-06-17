@@ -1,2 +1,13 @@
+.slide_panel
+  .slide_panel_left
+  .slide_panel_content
+  .slide_panel_right
+  .slide_book_icon
+.category_filter
+  .btn_filter
+    .search_tip 排序：
+    = link_to (content_tag(:span, "价 格", :class => "text").concat(content_tag(:span, "", :class => "arrow up"))), "#", :class => "active", :title => "销量由高到低"
+    = link_to (content_tag(:span, "销 量", :class => "text").concat(content_tag(:span, "", :class => "arrow up"))), "#", :class => "", :title => "销量由高到低"
+    = link_to (content_tag(:span, "折 扣", :class => "text").concat(content_tag(:span, "", :class => "arrow down"))), "#", :class => "", :title => "销量由高到低"
 = render @products
 
