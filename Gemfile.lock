@@ -39,6 +39,8 @@ GEM
     builder (3.0.0)
     carrierwave (0.5.4)
       activesupport (~> 3.0)
+    client_side_validations (3.0.5)
+      activesupport
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -132,6 +134,7 @@ DEPENDENCIES
   acts_as_commentable
   ancestry
   carrierwave
+  client_side_validations
   coffee-script
   devise
   foreigner

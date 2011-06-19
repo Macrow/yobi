@@ -1,4 +1,4 @@
 == My yobi
 
-  1.product with category
+  Just a rails app named yobi.
 

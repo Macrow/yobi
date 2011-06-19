@@ -246,3 +246,36 @@ zh-CN:
       update: "更新%{model}"
       submit: "储存%{model}"
 
+  views:
+    pagination:
+      previous: "上一页"
+      next: "下一页"
+      first: "第一页"
+      last: "最后"
+      truncate: "..."
+
+
+  activerecord:
+    models:
+      user: "用户"
+      comment: "评论"
+    attributes:
+      user:
+        login: "用户名或邮箱"
+        user_name: "用户名"
+        email: "邮箱"
+        password: "密码"
+        password_confirmation: "重复密码"
+        current_password: "原始密码"
+      comment:
+        title: "题目"
+        comment: "评论内容"
+    errors:
+      models:
+        user:
+          attributes:
+            user_name:
+              taken: "用户名已经被占用"
+            email:
+              taken: "邮箱已经被占用"
+

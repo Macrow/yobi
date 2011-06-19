@@ -6,7 +6,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require slidesjs/slides.min.jquery.js
 
 
 jQuery(function(){

@@ -1,7 +1,8 @@
 <% if user_signed_in? %>
-   <% if @comment.valid? %>
-    $("#comments").append("<%= escape_javascript(render @comment) %>");
+  <% if @comment.valid? %>
     $("#new_comment :text, textarea").val("");
+    $("#comments").append("<%= escape_javascript(render @comment) %>");
+    $("#comment_<%= @comment.id %>").hide().fadeIn(500);
   <% elsif @comment.errors.messages.include?(:title) %>
     alert("请填写评论标题！");
   <% elsif @comment.errors.messages.include?(:comment) %>

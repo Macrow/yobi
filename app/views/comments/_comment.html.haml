@@ -2,5 +2,5 @@
   .title
     .name= comment.title
     .author= "#{comment.user.user_name} 发表于 #{time_ago_in_words(comment.created_at)} 前"
-  .body= comment.comment
+  .body= comment.formated_comment
 

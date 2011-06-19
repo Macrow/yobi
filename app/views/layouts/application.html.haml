@@ -9,16 +9,11 @@
     = yield(:script)
     = csrf_meta_tags
   .container
-    .span-24
-      #top-nav= user_links
+    .span-24= render "shared/top_user_tools"
     .span-24
       #logo
-        %h1= link_to image_tag("/images/yobi.gif"), root_path
-      #tab
-        %ul.tabs
-          %li= link_to "首 页", root_path, :class => "selected"
-          - @root_categories.each do |c|
-            %li= link_to c.name, c
+        %h1= link_to image_tag("/images/Yobi-logo.png"), root_path
+      = render "shared/tabs"
     .span-24= render "shared/tabs_tools"
     .span-6= render "shared/sidebar"
     .span-18.last.top-margin-5

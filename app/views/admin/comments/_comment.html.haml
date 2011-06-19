@@ -6,5 +6,5 @@
     .tool
       =link_to "编辑", edit_admin_product_comment_path(@owner, comment), :remote => true
       =link_to "删除", admin_product_comment_path(@owner, comment), :method => :delete, :confirm => "Are you sure?", :remote => true
-  .body= comment.comment
+  .body= comment.formated_comment
 

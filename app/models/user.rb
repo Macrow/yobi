@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  validates :user_name, :presence => true, :uniqueness => true
+  validates_presence_of :user_name, :email
+  validates_uniqueness_of :user_name, :email, :case_sensitive => false
 
   devise :database_authenticatable, :registerable, :encryptable,
          :recoverable, :rememberable, :trackable, :validatable

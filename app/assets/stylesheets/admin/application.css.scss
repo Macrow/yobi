@@ -222,7 +222,41 @@ ul {
     background: #f8f8f8;
   }
 }
-
+/* ====================== pagination =========================== */
+#page {
+  width: 100%;
+  padding: 10px 0;
+  .pagination {
+	  font-size: 13px;
+	  text-align:right;
+	  padding:4px 6px 4px 0;
+	  background-color:#fff;
+	  color:#313031;
+	  a {
+	    color:#0030ce;
+	    text-decoration:none;
+	    padding:5px 6px 4px 5px;
+	    margin:0 3px 0 3px;
+	    border:1px solid #b7d8ee;
+	    &:hover, &:active {
+	      color:#0066a7;
+	      border:1px solid #b7d8ee;
+	      background-color:#d2eaf6;
+      }
+    }
+    span.current {
+	    padding:5px 6px 4px 5px;
+	    margin:0 3px 0 3px;
+	    border:1px solid #b7d8ee;
+	    font-weight:bold;
+	    color:#444444;
+	    background-color:#d2eaf6;
+    }
+    span.disabled {
+	    display:none;
+    }
+  }
+}
 /* ====================== UI =========================== */
 
 #header {

@@ -1,0 +1,15 @@
+#top-nav
+  您好，欢迎来到友比科技！
+  - if user_signed_in?
+    = "欢迎您回来【#{link_to(current_user.user_name, edit_user_registration_path)}】".html_safe
+    = " | "
+    = link_to("退 出", destroy_user_session_path)
+    - if current_user.admin?
+      = " | "
+      = link_to("后台管理", admin_root_path)
+  - else
+    = "请 #{link_to("登 录", new_user_session_path)}".html_safe
+    = " 或者 "
+    = link_to("注 册", new_user_registration_path)
+  .right 了解表单 | 关于我们 | 人才招聘 | 诚征加盟 | 防伪查询 | 汇款信息 | 友情链接 | 联系我们
+

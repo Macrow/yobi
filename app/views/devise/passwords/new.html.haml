@@ -1,10 +1,11 @@
-%h2 Forgot your password?
-= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
-  = devise_error_messages!
-  %p
-    = f.label :email
-    %br/
-    = f.email_field :email
-  %p= f.submit "Send me reset password instructions"
-= render :partial => "devise/shared/links"
+- title "重置密码"
+.span-9
+  .login-box
+    = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+      = f.label :email
+      = f.email_field :email
+      = f.submit "发送重置密码"
+.span-9.last
+  .login-tools
+    = render :partial => "devise/shared/links"
 

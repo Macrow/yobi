@@ -1,6 +1,6 @@
 .slide_panel
   .slide_panel_left
-  .slide_panel_content
+  .slide_panel_content= render :partial => "products/product_elite", :collection => @elite_products, :as => :product
   .slide_panel_right
   .slide_book_icon
 .category_filter
@@ -10,4 +10,5 @@
     = link_to (content_tag(:span, "销 量", :class => "text").concat(content_tag(:span, "", :class => "arrow up"))), "#", :class => "", :title => "销量由高到低"
     = link_to (content_tag(:span, "折 扣", :class => "text").concat(content_tag(:span, "", :class => "arrow down"))), "#", :class => "", :title => "销量由高到低"
 = render @products
+#page= paginate @products
 

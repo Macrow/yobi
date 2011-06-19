@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-
+  include ActionView::Helpers::SanitizeHelper
   include ActsAsCommentable::Comment
 
   belongs_to :commentable, :polymorphic => true
@@ -14,5 +14,9 @@ class Comment < ActiveRecord::Base
   belongs_to :user
 
   validates_presence_of :title, :comment
+
+  def formated_comment
+    sanitize comment.gsub(/\n/, "<br/>")
+  end
 end
 

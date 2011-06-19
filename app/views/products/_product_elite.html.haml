@@ -1,0 +1,7 @@
+%div{:class => "product_elite"}
+  .image= product_major_image(product, "100x105")
+  .columns
+    .column.name= link_to product.name, product
+    .column= "<span class='off'>#{show_money(product.retail_price)}</span>".html_safe
+    .column= "<span class='red bold'>#{show_money(product.present_price)}</span>".html_safe
+
