@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class Admin::PlistsController < Admin::ApplicationController
 
   def index

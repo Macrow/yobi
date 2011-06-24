@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :get_root_categories
+  before_filter :get_categories
 
   private
-  def get_root_categories
-    @root_categories ||= Category.roots
+  def get_categories
+    @categories ||= Category.arrange(:order => :created_at)
   end
 end
 

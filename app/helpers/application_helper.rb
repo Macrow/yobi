@@ -1,3 +1,5 @@
+# coding: utf-8
+
 module ApplicationHelper
   def title(page_title, show_title = true)
     content_for(:title) { h(page_title.to_s) }
@@ -38,6 +40,24 @@ module ApplicationHelper
       output << " > " << "用户中心"
     end
     content_tag(:div, output.html_safe, :id => "nav-path")
+  end
+
+  def show_categories_menu(categories)
+    categories.map do |category, sub_categories|
+      if sub_categories.empty?
+        if category.is_root?
+          content_tag(:li, "<div class='icon'></div>".html_safe + link_to(category.name, category, :class => "tit"))
+        else
+          content_tag(:li, link_to(category.name, category))
+        end
+      else
+        if category.is_root?
+          content_tag(:li, "<div class='icon'></div>".html_safe + link_to(category.name, category, :class => "tit") + content_tag(:ul, show_categories_menu(sub_categories)))
+        else
+          content_tag(:li, link_to(category.name, category, :class => "tit") + content_tag(:ul, show_categories_menu(sub_categories)))
+        end
+      end
+    end.join.html_safe
   end
 end
 

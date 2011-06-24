@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class Admin::UsersController < Admin::ApplicationController
   def index
     @users = User.order("created_at DESC").page(params[:page]).per(10)
@@ -18,7 +20,8 @@ class Admin::UsersController < Admin::ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user], :as => :admin)
+    if @user.update_attributes(params[:user])
+      @user.update_attribute(:admin, params[:user][:admin])
       redirect_to [:admin, @user], :notice => "已成功更新 #{@user.user_name} 信息！"
     else
       render :action => :edit

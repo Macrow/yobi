@@ -4,13 +4,6 @@
     = link_to "删除", admin_product_path(@product), :method => :delete, :confirm => "Are you sure?", :class => "negative button"
 .form
   = nested_form_for [:admin, @product] do |f|
-    -if @product.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@product.errors.count, "error")} prohibited this product from being saved:"
-        %ul
-          - @product.errors.full_messages.each do |msg|
-            %li= msg
-
     .field
       = f.label :name
       = f.text_field :name
@@ -34,8 +27,9 @@
       .properties
         = f.fields_for :properties do |p|
           = render "admin/properties/form", :p => p
-      %br/
-      .add_link= f.link_to_add "添加属性", :properties
+      .add_link
+        = f.link_to_add "<span class='plus icon'></span>添加属性".html_safe, :properties, :class => "button"
+        = link_to "<span class='fork icon'></span>属性类别管理".html_safe, admin_plists_path, :class => "button positive"
     .field
       = f.label :description
       = f.text_area :description, :id => "kindeditor_id"
@@ -45,5 +39,5 @@
       或者
       = link_to "返回", admin_products_path
 
-= uploadify_and_kindeditor_js
+= uploadify_and_kindeditor_and_nested_form_js
 

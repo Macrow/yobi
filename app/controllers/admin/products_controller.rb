@@ -1,5 +1,7 @@
+# coding: utf-8
+
 class Admin::ProductsController < Admin::ApplicationController
-  before_filter :get_categories_tree, :only => [:new, :edit, :create, :update]
+  before_filter :get_categories_tree, :get_plists, :only => [:new, :edit, :create, :update]
 
   def index
     search = params[:search].nil? ? "" : params[:search]
@@ -48,6 +50,10 @@ class Admin::ProductsController < Admin::ApplicationController
 
   def get_categories_tree
     @categories = Category.get_categories_tree
+  end
+
+  def get_plists
+    @plists ||= Plist.all
   end
 end
 

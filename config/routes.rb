@@ -1,9 +1,9 @@
 Yobi::Application.routes.draw do
 
-  resources :products do
+  resources :products, :only => [:show] do
     resources :comments, :only => [:create]
   end
-  resources :categories
+  resources :categories, :only => [:show]
   resources :articles, :only => [:show]
   devise_for :users
 

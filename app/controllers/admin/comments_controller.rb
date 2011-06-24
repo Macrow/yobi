@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class Admin::CommentsController < Admin::ApplicationController
 
   before_filter :find_product_or_user

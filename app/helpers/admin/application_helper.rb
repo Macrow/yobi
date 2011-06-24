@@ -1,3 +1,5 @@
+# coding: utf-8
+
 module Admin::ApplicationHelper
   def uploadify_js(product)
     content_for :script do
@@ -7,13 +9,20 @@ module Admin::ApplicationHelper
     end
   end
 
-  def uploadify_and_kindeditor_js
+  def uploadify_and_kindeditor_and_nested_form_js
     content_for :script do
       concat javascript_include_tag("/uploadify/jquery.uploadify.v2.1.4.min.js")
       concat javascript_include_tag("/uploadify/swfobject.js")
       concat javascript_include_tag("admin/kindeditor/kindeditor-min.js")
       concat javascript_include_tag("admin/kindeditor/kindeditor-init.js")
+      concat javascript_include_tag("admin/nested_form.js")
       concat image_uploadify(admin_dimages_path, "dimage")
+    end
+  end
+
+  def include_lightbox_js
+    content_for :script do
+      concat javascript_include_tag("lightbox/jquery.lightbox.min.js")
     end
   end
 
@@ -47,7 +56,7 @@ module Admin::ApplicationHelper
     end.join.html_safe
   end
 
-  def category_path(category)
+  def category_and_ancestors_path(category)
     output = ""
     category.ancestors.each do |c|
       output << link_to(c.name, admin_category_path(c)) << " > "

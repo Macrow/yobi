@@ -7,7 +7,7 @@
   .info
     .title 产品目录
     .content
-      .attr= category_path(@product.category)
+      .attr= category_and_ancestors_path(@product.category)
   .info
     .title 产品信息
     .content
@@ -29,4 +29,6 @@
     .title 详细介绍
     .content
       .attr= @product.description.html_safe
+
+= include_lightbox_js
 

@@ -259,8 +259,10 @@ zh-CN:
     models:
       user: "用户"
       comment: "评论"
+      category: "目录"
       product: "产品"
       plist: "产品属性类型"
+      properties: "属性"
     attributes:
       user:
         login: "用户名或邮箱"
@@ -272,6 +274,9 @@ zh-CN:
       comment:
         title: "题目"
         comment: "评论内容"
+      category:
+        name: "名称"
+        category: "父目录"
       product:
         name: "产品名称"
         elite: "是否推荐"
@@ -283,6 +288,9 @@ zh-CN:
         properties: "产品属性"
       plist:
         name: "名称"
+      properties:
+        name: "名称"
+        value: "内容"
     errors:
       models:
         user:

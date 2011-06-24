@@ -1,22 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc4'
-
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
+gem 'rails', '3.0.9'
 gem 'sqlite3'
-
-# Asset template engines
-gem 'json'
-gem 'sass'
-gem 'coffee-script'
-gem 'uglifier'
 gem 'jquery-rails'
 
 # haml
 gem 'haml'
 gem 'haml-rails'
+gem 'sass'
 
 gem 'ancestry'
 gem 'foreigner'
@@ -25,7 +16,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'acts_as_commentable'
 gem 'client_side_validations'
-# gem 'nested_form'
+gem 'nested_form'
 
 # authentication
 gem 'devise'
