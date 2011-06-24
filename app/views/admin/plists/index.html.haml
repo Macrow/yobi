@@ -1,0 +1,10 @@
+- title "产品属性类别管理"
+= render "form", :plist => Plist.new
+#plists
+  = render @plists
+
+= content_for :sidebar do
+  %h2 sidebar
+  %ul
+    %li= link_to "<span class='tag icon'></span>返回产品列表".html_safe, admin_products_path, :class => "big button"
+

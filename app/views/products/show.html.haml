@@ -15,8 +15,10 @@
     .span-8.column= "折扣比例：#{((@product.present_price/@product.retail_price)*100).to_i} 折"
     .span-8.column= "库存数量：#{@product.stock_count}"
     .span-9.line
-    .span-9
-      .property
+    - unless @product.properties.empty?
+      .span-9
+        .properties-title 产品属性
+        .properties= render @product.properties
   .span-18.last
     .relation-title 最佳拍档
     .relation

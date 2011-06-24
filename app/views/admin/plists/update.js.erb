@@ -1,0 +1,4 @@
+<% if @plist.valid? %>
+  $("form#edit_plist_<%= @plist.id %>").replaceWith("<%= escape_javascript(render @plist) %>");
+<% end %>
+

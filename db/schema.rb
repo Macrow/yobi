@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110615154414) do
+ActiveRecord::Schema.define(:version => 20110621134755) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -61,6 +61,10 @@ ActiveRecord::Schema.define(:version => 20110615154414) do
     t.datetime "updated_at"
   end
 
+  create_table "plists", :force => true do |t|
+    t.string "name"
+  end
+
   create_table "products", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -72,6 +76,16 @@ ActiveRecord::Schema.define(:version => 20110615154414) do
     t.integer  "stock_count"
     t.boolean  "elite",                                       :default => false
   end
+
+  create_table "properties", :force => true do |t|
+    t.string   "name"
+    t.string   "value"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "properties", ["product_id"], :name => "index_properties_on_product_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "",    :null => false

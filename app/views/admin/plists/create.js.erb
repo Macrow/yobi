@@ -1,0 +1,6 @@
+<% if @plist.valid? %>
+  $("#new_plist :text").val("");
+  $("#plists").append("<%= escape_javascript(render @plist) %>");
+  $("#plist_<%= @plist.id %>").hide().fadeIn(500);
+<% end %>
+

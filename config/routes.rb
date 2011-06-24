@@ -10,14 +10,15 @@ Yobi::Application.routes.draw do
   root :to => "home#index"
 
   namespace :admin do
+    resources :articles
     resources :categories
+    resources :plists, :except => [:new, :show]
     resources :products do
       resources :images, :only => [:create, :update, :destroy]
       resources :comments, :only => [:index, :edit, :update, :destroy] do
         get "destory_all", :on => :collection
       end
     end
-    resources :articles
     resources :users do
       resources :comments, :only => [:index, :edit, :update, :destroy] do
         get "destory_all", :on => :collection

@@ -25,6 +25,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'acts_as_commentable'
 gem 'client_side_validations'
+# gem 'nested_form'
 
 # authentication
 gem 'devise'

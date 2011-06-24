@@ -17,6 +17,10 @@
       .attr= "友比价格：#{show_money(@product.present_price)}"
       .attr= "库存数量：#{@product.stock_count}"
   .info
+    .title 产品属性
+    .content
+      .attr= render @product.properties
+  .info
     .title 展示图片
     #images.content
       = render @product.images

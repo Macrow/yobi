@@ -17,7 +17,7 @@ class Admin::ProductsController < Admin::ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:id], :include => :properties)
   end
 
   def create

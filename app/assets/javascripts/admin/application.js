@@ -7,4 +7,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require lightbox/jquery.lightbox.min.js
+//= require admin/nested_form.js
 

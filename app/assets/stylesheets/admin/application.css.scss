@@ -141,6 +141,15 @@ form.edit_comment {
     }
   }
 }
+/* ======== plist ======== */
+.new_plist {
+  margin: 10px;
+}
+.plist, .edit_plist {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  margin: 5px;
+}
 /* ======== application ======== */
 body {
 	font-family:"Lucida Grande",verdana,arial,helvetica,sans-serif;
@@ -188,6 +197,9 @@ ul {
       float: left;
       width: 150px;
       overflow: hidden;
+    }
+    .properties, .add_link {
+      margin-left: 150px;
     }
   }
   .field_with_errors {

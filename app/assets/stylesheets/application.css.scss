@@ -272,12 +272,18 @@ span.price-big {
     margin: 5px 0;
     border-bottom: 1px dashed #ccc;
   }
-  .property {
-    height: 250px;
+  .properties-title {
+    font-size: 1.2em;
+    margin-top: 5px;
+  }
+  .properties {
     background: #F2F2F2;
     border: 1px solid #bbb;
-    padding: 5px;
-    margin: 10px 0;
+    padding: 10px;
+    .property {
+      color: #132E7E;
+      padding: 3px;
+    }
   }
   .more_images {
     .image {
@@ -291,8 +297,8 @@ span.price-big {
     }
   }
   .relation-title {
-    font-size: 1.5em;
-    margin-top: 10px;
+    font-size: 1.2em;
+    margin-top: 5px;
   }
   .relation {
     background-color: #F2F2F2;
