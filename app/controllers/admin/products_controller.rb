@@ -20,6 +20,7 @@ class Admin::ProductsController < Admin::ApplicationController
 
   def edit
     @product = Product.find(params[:id], :include => :properties)
+    @tags = Product.tag_counts_on(:tags)
   end
 
   def create

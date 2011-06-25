@@ -28,6 +28,7 @@ GEM
       activemodel (= 3.0.9)
       activesupport (= 3.0.9)
     activesupport (3.0.9)
+    acts-as-taggable-on (2.0.6)
     acts_as_commentable (3.0.1)
     ancestry (1.2.4)
       activerecord (>= 2.2.2)
@@ -108,6 +109,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   acts_as_commentable
   ancestry
   carrierwave

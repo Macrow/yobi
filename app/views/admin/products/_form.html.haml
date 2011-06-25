@@ -31,6 +31,13 @@
         = f.link_to_add "<span class='plus icon'></span>添加属性".html_safe, :properties, :class => "button"
         = link_to "<span class='fork icon'></span>属性类别管理".html_safe, admin_plists_path, :class => "button positive"
     .field
+      = f.label :tags
+      = f.text_field :tags_text
+    .field
+      .tag_cloud
+        - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
+          = link_to_function tag.name, "$('#product_tags_text').val($('#product_tags_text').val() + ' #{tag.name}')", :class => css_class
+    .field
       = f.label :description
       = f.text_area :description, :id => "kindeditor_id"
       #image_upload

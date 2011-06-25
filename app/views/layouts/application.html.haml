@@ -13,7 +13,7 @@
     .span-24
       #logo
         %h1= link_to image_tag("/images/Yobi-logo.png"), root_path
-      = render "shared/tabs"
+      #tabs=show_tabs(@root_categories)
     .span-24= render "shared/tabs_tools"
     .span-6= render "shared/sidebar"
     .span-18.last.top-margin-5

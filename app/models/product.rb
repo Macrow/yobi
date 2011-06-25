@@ -9,6 +9,23 @@ class Product < ActiveRecord::Base
   before_save :verify_safe
 
   acts_as_commentable
+  acts_as_taggable
+
+  def off_percent
+    if self.present_price > 0 and self.retail_price > 0
+      ((self.present_price/self.retail_price)*100).to_i
+    else
+      "/"
+    end
+  end
+
+  def tags_text
+    self.tag_list.join(" ")
+  end
+
+  def tags_text=(text)
+    self.tag_list = text.split(" ")
+  end
 
   private
 

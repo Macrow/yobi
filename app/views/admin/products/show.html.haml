@@ -21,6 +21,10 @@
     .content
       .attr= render @product.properties
   .info
+    .title 产品标签
+    .content
+      .attr= @product.tags_text
+  .info
     .title 展示图片
     #images.content
       = render @product.images

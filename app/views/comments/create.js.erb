@@ -3,10 +3,8 @@
     $("#new_comment :text, textarea").val("");
     $("#comments").append("<%= escape_javascript(render @comment) %>");
     $("#comment_<%= @comment.id %>").hide().fadeIn(500);
-  <% elsif @comment.errors.messages.include?(:title) %>
-    alert("请填写评论标题！");
-  <% elsif @comment.errors.messages.include?(:comment) %>
-    alert("评论内容不能为空！");
+  <% else %>
+    alert("请填写评论标题和内容！");
   <% end %>
 <% else %>
   alert("请登录后发表评论！");

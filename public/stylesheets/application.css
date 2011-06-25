@@ -240,14 +240,6 @@ span.price-big {
   display: inline-block; }
 #product .more_images .note {
   padding: 0 5px; }
-#product .relation-title {
-  font-size: 1.2em;
-  margin-top: 5px; }
-#product .relation {
-  background-color: #F2F2F2;
-  border: 1px solid #bbb;
-  height: 120px;
-  padding: 10px; }
 #product .description {
   padding: 10px; }
 

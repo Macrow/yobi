@@ -286,6 +286,7 @@ zh-CN:
         stock_count: "库存数量"
         description: "产品描述"
         properties: "产品属性"
+        tags: "标签"
       plist:
         name: "名称"
       properties:

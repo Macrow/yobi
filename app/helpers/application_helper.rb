@@ -42,6 +42,17 @@ module ApplicationHelper
     content_tag(:div, output.html_safe, :id => "nav-path")
   end
 
+  def show_tabs(categories)
+    css = (controller_name == "home" ? "current" : "")
+    output = content_tag(:li, content_tag(:span, link_to("首 页", root_path)), :class => css)
+    categories.each do |c|
+      css = ((controller_name == "categories" and params[:id] == c.id.to_s) ? "current" : "")
+      output << content_tag(:li, content_tag(:span, link_to(c.name, c)), :class => css)
+    end
+    output = content_tag(:ul, output, :class => "tabs")
+    output.html_safe
+  end
+
   def show_categories_menu(categories)
     categories.map do |category, sub_categories|
       if sub_categories.empty?

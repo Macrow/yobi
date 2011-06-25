@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   private
   def get_categories
     @categories ||= Category.arrange(:order => :created_at)
+    @root_categories ||= @categories.keys
   end
 end
 
