@@ -6,9 +6,13 @@
 .category_filter
   .btn_filter
     .search_tip 排序：
-    = link_to (content_tag(:span, "价 格", :class => "text").concat(content_tag(:span, "", :class => "arrow up"))), "#", :class => "active", :title => "销量由高到低"
-    = link_to (content_tag(:span, "销 量", :class => "text").concat(content_tag(:span, "", :class => "arrow up"))), "#", :class => "", :title => "销量由高到低"
-    = link_to (content_tag(:span, "折 扣", :class => "text").concat(content_tag(:span, "", :class => "arrow down"))), "#", :class => "", :title => "销量由高到低"
-= render @products
+    = show_order_icon_link(:q, "销量", false, @category)
+    = show_order_icon_link(:p, "价格", true, @category)
+    = show_order_icon_link(:d, "折扣", false, @category)
+    = show_order_icon_link(:a, "最新上架", false, @category)
+  .view_style
+    浏览模式：
+    = show_view_style_icon_links(@category)
+= render_products_by_view_style(@products)
 #page= paginate @products
 

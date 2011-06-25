@@ -1,5 +1,5 @@
 class CreateImages < ActiveRecord::Migration
-  def change
+  def self.up
     create_table :images do |t|
       t.string :image
       t.integer :product_id
@@ -10,7 +10,14 @@ class CreateImages < ActiveRecord::Migration
       t.timestamps
     end
 
+    add_index :images, :product_id
     add_foreign_key(:products, :images, :dependent => :delete)
+  end
+
+  def self.down
+    remove_foreign_key(:products, :images, :dependent => :delete)
+    remove_index :images, :product_id
+    drop_table :images
   end
 end
 

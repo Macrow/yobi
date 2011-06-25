@@ -1,5 +1,5 @@
 class CreateDimages < ActiveRecord::Migration
-  def change
+  def self.up
     create_table :dimages do |t|
       t.string :dimage
       t.string :content_type
@@ -7,6 +7,10 @@ class CreateDimages < ActiveRecord::Migration
 
       t.timestamps
     end
+  end
+
+  def self.down
+    drop_table :dimages
   end
 end
 

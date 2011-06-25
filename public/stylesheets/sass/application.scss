@@ -161,7 +161,20 @@ $categories-title-color: #F18A0E;
   width: 790px;
   overflow: hidden;
   margin: 5px 0;
-
+  .view_style {
+    margin: 12px 10px 0 400px;
+    width: 250px;
+    height: 20px;
+    overflow: hidden;
+    a {
+      margin: 1px 3px;
+      padding: 1px 3px;
+    }
+    a.current {
+      border: 1px solid #ccc;
+      background: #fff;
+    }
+  }
   .btn_filter {
     color: #404040;
     display: inline;
@@ -172,8 +185,7 @@ $categories-title-color: #F18A0E;
     .search_tip {
       display: inline;
       float: left;
-      padding: 3px 0;
-      margin: 0 2px 0 10px;
+      margin: 2px 2px 0 20px;
     }
     a {
       background: url("/images/filter.gif") no-repeat scroll right 0 transparent;
@@ -241,6 +253,69 @@ $categories-title-color: #F18A0E;
     padding-left: 30px;
     span.off { text-decoration: line-through; }
     span.red { color: #D10015; }
+  }
+}
+.product_full {
+  width: 690px;
+  padding: 5px;
+  border-bottom: 1px dashed #ccc;
+  .image {
+    width: 100px;
+    height: 100px;
+    float: left;
+  }
+  .name {
+    width: 350px;
+    height: 100px;
+    float: left;
+    overflow: hidden;
+  }
+  .columns {
+    width: 230px;
+    height: 100px;
+    float: left;
+    overflow: hidden;
+    .column {
+      display: block;
+      padding-left: 30px;
+      span.off { text-decoration: line-through; }
+      span.red { color: #D10015; }
+    }
+  }
+  .clear {
+    clear: both;
+  }
+}
+.product_list {
+  width: 690px;
+  padding: 5px;
+  border-bottom: 1px dashed #ccc;
+  .name {
+    width: 350px;
+    height: 40px;
+    float: left;
+    overflow: hidden;
+  }
+  .price {
+    width: 200px;
+    height: 40px;
+    float: left;
+    overflow: hidden;
+    .column {
+      display: block;
+      padding-left: 30px;
+      span.off { text-decoration: line-through; }
+      span.red { color: #D10015; }
+    }
+  }
+  .discount {
+    width: 130px;
+    height: 40px;
+    float: left;
+    overflow: hidden;
+  }
+  .clear {
+    clear: both;
   }
 }
 span.price-off {

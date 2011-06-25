@@ -1,3 +1,4 @@
+#coding: utf-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -26,7 +27,7 @@ end
 
 puts "Initial administrator"
 Macrow = User.create(:user_name => "Macrow", :email => "Macrow_wh@163.com", :password => "Macrow")
-Macrow.update_attributes({:admin => true}, :as => :admin)
+Macrow.update_attribute(:admin, true)
 
 puts "Finished!"
 

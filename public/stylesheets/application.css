@@ -127,6 +127,17 @@
   width: 790px;
   overflow: hidden;
   margin: 5px 0; }
+  .category_filter .view_style {
+    margin: 12px 10px 0 400px;
+    width: 250px;
+    height: 20px;
+    overflow: hidden; }
+    .category_filter .view_style a {
+      margin: 1px 3px;
+      padding: 1px 3px; }
+    .category_filter .view_style a.current {
+      border: 1px solid #ccc;
+      background: #fff; }
   .category_filter .btn_filter {
     color: #404040;
     display: inline;
@@ -137,8 +148,7 @@
     .category_filter .btn_filter .search_tip {
       display: inline;
       float: left;
-      padding: 3px 0;
-      margin: 0 2px 0 10px; }
+      margin: 2px 2px 0 20px; }
     .category_filter .btn_filter a {
       background: url("/images/filter.gif") no-repeat scroll right 0 transparent;
       color: #666666;
@@ -194,6 +204,63 @@
       text-decoration: line-through; }
     .product .column span.red {
       color: #D10015; }
+
+.product_full {
+  width: 690px;
+  padding: 5px;
+  border-bottom: 1px dashed #ccc; }
+  .product_full .image {
+    width: 100px;
+    height: 100px;
+    float: left; }
+  .product_full .name {
+    width: 350px;
+    height: 100px;
+    float: left;
+    overflow: hidden; }
+  .product_full .columns {
+    width: 230px;
+    height: 100px;
+    float: left;
+    overflow: hidden; }
+    .product_full .columns .column {
+      display: block;
+      padding-left: 30px; }
+      .product_full .columns .column span.off {
+        text-decoration: line-through; }
+      .product_full .columns .column span.red {
+        color: #D10015; }
+  .product_full .clear {
+    clear: both; }
+
+.product_list {
+  width: 690px;
+  padding: 5px;
+  border-bottom: 1px dashed #ccc; }
+  .product_list .name {
+    width: 350px;
+    height: 40px;
+    float: left;
+    overflow: hidden; }
+  .product_list .price {
+    width: 200px;
+    height: 40px;
+    float: left;
+    overflow: hidden; }
+    .product_list .price .column {
+      display: block;
+      padding-left: 30px; }
+      .product_list .price .column span.off {
+        text-decoration: line-through; }
+      .product_list .price .column span.red {
+        color: #D10015; }
+  .product_list .discount {
+    width: 130px;
+    height: 40px;
+    float: left;
+    overflow: hidden; }
+  .product_list .clear {
+    clear: both; }
 
 span.price-off {
   text-decoration: line-through; }

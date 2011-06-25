@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20110625075418) do
     t.datetime "updated_at"
   end
 
+  add_index "articles", ["user_id"], :name => "index_articles_on_user_id"
+
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.string   "ancestry"
@@ -61,6 +63,8 @@ ActiveRecord::Schema.define(:version => 20110625075418) do
     t.datetime "updated_at"
   end
 
+  add_index "images", ["product_id"], :name => "index_images_on_product_id"
+
   create_table "plists", :force => true do |t|
     t.string "name"
   end
@@ -75,7 +79,11 @@ ActiveRecord::Schema.define(:version => 20110625075418) do
     t.decimal  "present_price", :precision => 8, :scale => 2
     t.integer  "stock_count"
     t.boolean  "elite",                                       :default => false
+    t.integer  "discount"
+    t.integer  "quantity",                                    :default => 0
   end
+
+  add_index "products", ["category_id"], :name => "index_products_on_category_id"
 
   create_table "properties", :force => true do |t|
     t.string   "name"

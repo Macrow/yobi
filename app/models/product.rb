@@ -5,19 +5,11 @@ class Product < ActiveRecord::Base
   has_many :properties, :dependent => :destroy
   accepts_nested_attributes_for :properties, :allow_destroy => true
   validates_presence_of :name
-  validates_numericality_of :retail_price, :present_price, :stock_count, :greater_than_or_equal_to => 0
-  before_save :verify_safe
+  validates_numericality_of :retail_price, :present_price, :stock_count, :quantity, :greater_than_or_equal_to => 0
+  before_save :verify_safe, :upate_discount
 
   acts_as_commentable
   acts_as_taggable
-
-  def off_percent
-    if self.present_price > 0 and self.retail_price > 0
-      ((self.present_price/self.retail_price)*100).to_i
-    else
-      "/"
-    end
-  end
 
   def tags_text
     self.tag_list.join(" ")
@@ -32,6 +24,14 @@ class Product < ActiveRecord::Base
   def verify_safe
     unless self.description.html_safe?
       self.description.gsub!(/<script.*?>.*?<\/script>/i, "")
+    end
+  end
+
+  def upate_discount
+    if self.present_price > 0 and self.retail_price > 0
+      self.discount = ((self.present_price/self.retail_price)*100).to_i
+    else
+      self.discount = 0
     end
   end
 end

@@ -1,5 +1,5 @@
 class CreateCategories < ActiveRecord::Migration
-  def change
+  def self.up
     create_table :categories do |t|
       t.string :name
       t.string :ancestry
@@ -8,6 +8,10 @@ class CreateCategories < ActiveRecord::Migration
     end
 
     add_index :categories, :ancestry
+  end
+
+  def self.down
+    drop_table :categories
   end
 end
 

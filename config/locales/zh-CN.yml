@@ -283,6 +283,7 @@ zh-CN:
         category: "产品目录"
         retail_price: "零售价格"
         present_price: "友比价格"
+        quantity: "产品销量"
         stock_count: "库存数量"
         description: "产品描述"
         properties: "产品属性"

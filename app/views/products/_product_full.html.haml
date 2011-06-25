@@ -1,0 +1,9 @@
+%div{:id => "product_#{product.id}", :class => "product_full" }
+  .image= product_major_image(product, "90x90")
+  .name= link_to product.name, product
+  .columns
+    .column= "<span class='red bold'>友比价格：#{show_money(product.present_price)}</span>".html_safe
+    .column= "零售价格：<span class='off'>#{show_money(product.retail_price)}</span>".html_safe
+    .column= "折 扣：#{product.discount} 折".html_safe
+  .clear
+

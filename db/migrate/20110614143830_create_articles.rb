@@ -1,5 +1,5 @@
 class CreateArticles < ActiveRecord::Migration
-  def change
+  def self.up
     create_table :articles do |t|
       t.string :title
       t.text :content
@@ -7,6 +7,12 @@ class CreateArticles < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :articles, :user_id
+  end
+
+  def self.down
+    drop_table :articles
   end
 end
 
