@@ -7,9 +7,14 @@ class Product < ActiveRecord::Base
   validates_presence_of :name
   validates_numericality_of :retail_price, :present_price, :stock_count, :quantity, :greater_than_or_equal_to => 0
   before_save :verify_safe, :upate_discount
+  paginates_per 16
 
   acts_as_commentable
   acts_as_taggable
+
+  # include all subtree category
+  scope :products_in_category, lambda {|id| where("category_id IN (SELECT categories.id FROM categories WHERE (categories.id = #{id} or ancestry like '#{id}/%' or categories.ancestry = '#{id}'))")}
+  search_methods :products_in_category
 
   def tags_text
     self.tag_list.join(" ")

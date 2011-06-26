@@ -113,6 +113,11 @@ $categories-title-color: #F18A0E;
     text-align: center;
   }
 }
+.empty_search {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.1em;
+}
 /* ======== categories ======== */
 .slide_panel {
   font-size: 12px;
@@ -549,7 +554,6 @@ form.new_comment {
     input {
       background: none repeat scroll 0 0 transparent;
       border: 0 none;
-      color: #CCCCCC;
       height: 26px;
       margin: 8px 0 0 4px;
       padding-left: 5px;

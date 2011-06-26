@@ -12,7 +12,8 @@
     .title 产品信息
     .content
       .attr= "产品名称：#{@product.name}"
-      .attr= "是否推荐：#{@product.elite}"
+      .attr= "产品编号：#{@product.stock_number}"
+      .attr= "是否推荐：#{@product.elite ? "<span class='red'>是</span>" : "否"}".html_safe
       .attr= "零售价格：#{show_money(@product.retail_price)}"
       .attr= "友比价格：#{show_money(@product.present_price)}"
       .attr= "产品销量：#{@product.quantity}"

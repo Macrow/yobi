@@ -2,8 +2,8 @@
   %td= link_to product.name, admin_product_path(product)
   %td= link_to product.category.name, admin_category_path(product.category)
   %td= show_money(product.present_price)
+  %td= product.discount
   %td= product.stock_count
-  %td= product.comments.size
   %td
     = link_to "编辑", edit_admin_product_path(product), :class => "pill button"
     = link_to "评论", admin_product_comments_path(product), :class => "pill positive button"

@@ -1,13 +1,14 @@
 - title "产品管理"
 %p
+
   %table.table
     %tbody
       %tr
-        %th 名称
-        %th 目录
-        %th 实际价格
-        %th 库存数量
-        %th 评论
+        %th= sort_link @search, :name
+        %th= sort_link @search, :category_name
+        %th= sort_link @search, :present_price
+        %th= sort_link @search, :discount
+        %th= sort_link @search, :stock_count
         %th{:width => "150"} 操作
       = render @products
   #page= paginate @products

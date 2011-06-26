@@ -1,8 +1,8 @@
 #tab-tools
   .all-categories 全部产品分类
   .search
-    = form_tag "keyword" do
-      %span= text_field_tag "keyword", nil, :style => "color: rgb(204, 204, 204);"
+    = form_for @search, :url => search_path, :html => {:method => :get} do |f|
+      %span= f.text_field :name_contains
       %button{:type => "submit"} 搜 索
   .cart
 

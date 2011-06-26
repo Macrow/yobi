@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20110625075418) do
     t.decimal  "retail_price",  :precision => 8, :scale => 2
     t.decimal  "present_price", :precision => 8, :scale => 2
     t.integer  "stock_count"
+    t.string   "stock_number"
     t.boolean  "elite",                                       :default => false
     t.integer  "discount"
     t.integer  "quantity",                                    :default => 0

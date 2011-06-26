@@ -285,9 +285,12 @@ zh-CN:
         present_price: "友比价格"
         quantity: "产品销量"
         stock_count: "库存数量"
+        discount: "折扣比例"
+        stock_number: "商品编号"
         description: "产品描述"
         properties: "产品属性"
         tags: "标签"
+        category_name: "产品目录"
       plist:
         name: "名称"
       properties:

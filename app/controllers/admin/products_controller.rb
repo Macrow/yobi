@@ -4,9 +4,9 @@ class Admin::ProductsController < Admin::ApplicationController
   before_filter :get_categories_tree, :get_plists, :only => [:new, :edit, :create, :update]
 
   def index
-    search = params[:search].nil? ? "" : params[:search]
-    search = "%" + search + "%"
-    @products = Product.where(["name LIKE ?", search]).order("created_at DESC").includes(:category).page(params[:page]).per(10)
+    @search = Product.search(params[:search])
+    @products = @search.includes(:category).page(params[:page])
+    @categories = Category.get_categories_tree(true)
   end
 
   def show

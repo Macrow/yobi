@@ -6,6 +6,7 @@ Yobi::Application.routes.draw do
   resources :categories, :only => [:show]
   resources :articles, :only => [:show]
   devise_for :users
+  match "/search" => "home#search"
 
   root :to => "home#index"
 

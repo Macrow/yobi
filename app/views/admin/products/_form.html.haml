@@ -8,6 +8,9 @@
       = f.label :name
       = f.text_field :name
     .field
+      = f.label :stock_number
+      = f.text_field :stock_number
+    .field
       = f.label :elite
       = f.check_box :elite
     .field
@@ -38,8 +41,9 @@
       = f.text_field :tags_text
     .field
       .tag_cloud
-        - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
-          = link_to_function tag.name, "$('#product_tags_text').val($('#product_tags_text').val() + ' #{tag.name}')", :class => css_class
+        - unless @tags.nil?
+          - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
+            = link_to_function tag.name, "$('#product_tags_text').val($('#product_tags_text').val() + ' #{tag.name}')", :class => css_class
     .field
       = f.label :description
       = f.text_area :description, :id => "kindeditor_id"

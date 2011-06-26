@@ -19,6 +19,8 @@
     padding: 10px; }
     .product .info .content .attr {
       padding: 3px; }
+      .product .info .content .attr span.red {
+        color: red; }
 
 /* ======== tag ======== */
 .tag_cloud .css1 {
@@ -202,6 +204,13 @@ ul {
       padding-bottom: 0px; }
   .table tr.even {
     background: #f8f8f8; }
+
+#right input[type="text"] {
+  width: 180px; }
+#right input[type="text"].number {
+  width: 60px; }
+#right hr {
+  color: #eee; }
 
 /* ====================== pagination =========================== */
 #page {

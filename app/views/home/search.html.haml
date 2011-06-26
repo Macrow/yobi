@@ -1,8 +1,3 @@
-.slide_panel
-  .slide_panel_left
-  .slide_panel_content= render :partial => "products/product_elite", :collection => @elite_products, :as => :product
-  .slide_panel_right
-  .slide_book_icon
 .category_filter
   .btn_filter
     .search_tip 排序：
@@ -15,4 +10,6 @@
     = show_view_style_icon_links
 = render_products_by_view_style(@products)
 #page= paginate @products
+- if @products.empty?
+  .empty_search= "非常抱歉，没有搜索到您需要的产品，#{link_to_function '返回？', 'window.history.go(-1)'}".html_safe
 

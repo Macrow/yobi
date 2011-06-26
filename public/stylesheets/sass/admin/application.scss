@@ -22,7 +22,8 @@
     .content {
       padding: 10px;
       .attr {
-      padding: 3px;
+        padding: 3px;
+        span.red { color: red; }
       }
     }
   }
@@ -243,6 +244,17 @@ ul {
   }
   tr.even {
     background: #f8f8f8;
+  }
+}
+#right {
+  input[type="text"] {
+    width: 180px;
+  }
+  input[type="text"].number {
+    width: 60px;
+  }
+  hr {
+    color: #eee;
   }
 }
 /* ====================== pagination =========================== */

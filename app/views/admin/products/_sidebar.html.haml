@@ -1,9 +1,55 @@
 %h2 快捷工具
 %ul
-  %li
-    = form_tag(admin_products_path, :method => :get) do
-      = text_field_tag("search", params[:search])
-      = submit_tag "搜索"
+  - if action_name == "index"
+    %li
+      = form_for @search, :url => admin_products_path, :html => {:method => :get} do |f|
+        名称：
+        %br/
+        = f.text_field :name_contains
+        %hr/
+        目录：
+        %br/
+        = f.select :products_in_category, @categories
+        %hr/
+        价格区间：
+        %br/
+        介于
+        = f.text_field :present_price_gt, :maxlength => "6", :class => "number"
+        与
+        = f.text_field :present_price_lt, :maxlength => "6", :class => "number"
+        之间
+        %hr/
+        折扣区间：
+        %br/
+        介于
+        = f.text_field :discount_gt, :maxlength => "6", :class => "number"
+        与
+        = f.text_field :discount_lt, :maxlength => "6", :class => "number"
+        之间
+        %hr/
+        库存区间：
+        %br/
+        介于
+        = f.text_field :stock_count_gt, :maxlength => "6", :class => "number"
+        与
+        = f.text_field :stock_count_lt, :maxlength => "6", :class => "number"
+        之间
+        %hr/
+        销量区间：
+        %br/
+        介于
+        = f.text_field :quantity_gt, :maxlength => "6", :class => "number"
+        与
+        = f.text_field :quantity_lt, :maxlength => "6", :class => "number"
+        之间
+        %hr/
+        是否推荐：
+        = f.check_box :elite_is_true
+        推荐
+        = f.check_box :elite_is_false
+        不推荐
+        %hr/
+        = f.submit "过滤"
   %li= link_to "<span class='plus icon'></span>新建产品".html_safe, new_admin_product_path, :class => "big button"
   - if action_name =~ /show|edit/i
     %li= link_to "<span class='mail icon'></span>共#{@product.comments.count}条评论".html_safe, admin_product_comments_path(@product), :class => "big button"
