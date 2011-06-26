@@ -1,13 +1,13 @@
 #elite
   .head
     .title
-    .more 床上用品 | 毛巾浴巾 | 厨房用品 | 日用杂品 | 小家具
-  .body= render @products
-#elite
+    .more
+  .body= render @elite_products
+#price_off
   .head
     .title
-    .more 床上用品 | 毛巾浴巾 | 厨房用品 | 日用杂品 | 小家具
-  .body= render @products
+    .more
+  .body= render @price_off_products
 
 = content_for :script do
   = javascript_include_tag "slidesjs/slides.min.jquery.js"

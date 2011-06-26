@@ -19,6 +19,7 @@ gem 'client_side_validations'
 gem 'nested_form'
 gem 'acts-as-taggable-on'
 gem 'meta_search'
+gem 'rails_config'
 
 # authentication
 gem 'devise'

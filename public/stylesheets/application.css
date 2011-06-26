@@ -2,10 +2,10 @@
 /* ======== home ======== */
 #slides .slides_container {
   width: 470px;
-  height: 200px; }
+  height: 220px; }
 #slides .slides_container div {
   width: 470px;
-  height: 200px;
+  height: 220px;
   display: block; }
 #slides .pagination {
   margin: 3px auto 0;
@@ -46,6 +46,31 @@
       height: 28px;
       padding: 2px 22px 0 0; }
   #elite .body {
+    border: 1px solid #2B8FC8;
+    border-top: none;
+    padding: 1px;
+    background: #fff; }
+
+#price_off {
+  margin: 3px 0; }
+  #price_off .head {
+    background: url("/images/sub_nav_bg.gif") repeat-x scroll 0 -670px transparent;
+    color: #1A66B3;
+    border-top: 2px solid #309EDD;
+    height: 30px;
+    line-height: 26px;
+    text-align: right; }
+    #price_off .head .title {
+      background: url("/images/sub_nav.gif") no-repeat scroll 0 -240px transparent;
+      float: left;
+      width: 150px;
+      height: 30px;
+      overflow: hidden; }
+    #price_off .head .more {
+      background: url("/images/sub_nav.gif") no-repeat scroll right -360px transparent;
+      height: 28px;
+      padding: 2px 22px 0 0; }
+  #price_off .body {
     border: 1px solid #2B8FC8;
     border-top: none;
     padding: 1px;
@@ -458,8 +483,8 @@ form.new_comment {
   color: #aaa; }
   #top-nav a {
     text-decoration: none; }
-  #top-nav .right {
-    float: right; }
+  #top-nav .user {
+    float: left; }
 
 #logo {
   width: 200px;

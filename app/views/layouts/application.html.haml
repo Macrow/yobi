@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title= content_for?(:title) ? yield(:title) : "yobi"
+    %title= show_title? ? yield(:title) : Settings.site.title
     = stylesheet_link_tag "application.css"
     /[if lt IE 8]
       = stylesheet_link_tag "blueprint/ie.css"
@@ -21,7 +21,7 @@
         = content_tag :div, msg, :class => key
     .span-18.last= show_nav_path
     - if controller_name == "home" && action_name == "index"
-      .span-12= render "shared/slide"
+      .span-12= render "shared/slides"
       .span-6.last= render "shared/articles"
     .span-18.last= yield
     .span-24= render "shared/footer"

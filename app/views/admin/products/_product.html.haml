@@ -1,6 +1,9 @@
 %tr{:class => cycle(:even, :odd)}
   %td= link_to product.name, admin_product_path(product)
-  %td= link_to product.category.name, admin_category_path(product.category)
+  - unless product.category.nil?
+    %td= link_to product.category.name, admin_category_path(product.category)
+  - else
+    %td 目录已被删除
   %td= show_money(product.present_price)
   %td= product.discount
   %td= product.stock_count

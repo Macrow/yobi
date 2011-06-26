@@ -1,0 +1,24 @@
+site:
+  title: 欢迎访问友比科技！
+slides:
+  slide1:
+    image: /images/slides/slide-1.jpg
+    url: http://www.51yobi.com
+    title: 欢迎光临友比科技！
+  slide2:
+    image: /images/slides/slide-2.jpg
+    url: http://www.51yobi.com
+    title: 欢迎光临友比科技！
+  slide3:
+    image: /images/slides/slide-3.jpg
+    url: http://www.51yobi.com
+    title: 欢迎光临友比科技！
+  slide4:
+    image: /images/slides/slide-4.jpg
+    url: http://www.51yobi.com
+    title: 欢迎光临友比科技！
+  slide5:
+    image: /images/slides/slide-5.jpg
+    url: http://www.51yobi.com
+    title: 欢迎光临友比科技！
+

@@ -1,7 +1,7 @@
 #coding: utf-8
 class Category < ActiveRecord::Base
   has_ancestry
-  has_many :products, :dependent => :destroy
+  has_many :products, :dependent => :nullify
   validates_presence_of :name
 
   def self.get_categories_tree(include_root = false, root_text = "顶层目录")

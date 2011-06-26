@@ -263,6 +263,7 @@ zh-CN:
       product: "产品"
       plist: "产品属性类型"
       properties: "属性"
+      article: "文章"
     attributes:
       user:
         login: "用户名或邮箱"
@@ -296,6 +297,9 @@ zh-CN:
       properties:
         name: "名称"
         value: "内容"
+      article:
+        title: "题目"
+        content: "内容"
     errors:
       models:
         user:

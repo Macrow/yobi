@@ -9,6 +9,22 @@ module ApplicationHelper
     @show_title
   end
 
+  def include_slide_js
+    %Q{
+    <script type='text/javascript'>
+      $(document).ready(function() {
+		    $('#slides').slides({
+			    preload: false,
+			    preloadImage: '/images/loading.gif',
+			    play: 5000,
+			    pause: 2500,
+			    hoverPause: true
+        });
+      });
+    </script>
+    }.gsub(/[\n ]+/, ' ').strip.html_safe
+  end
+
   def show_money(number)
     number_to_currency(number, :unit => "￥")
   end

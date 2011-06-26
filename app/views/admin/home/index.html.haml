@@ -1,2 +1,10 @@
-%h1 Admin::Home#index
-%p Find me in app/views/admin/home/index.html.haml
+- title "欢迎登录管理后台"
+%p
+  .dashboard
+    .title 数据统计：
+    .count= "共#{@category_count}个目录"
+    .count= "共#{@product_count}件产品"
+    .count= "共#{@article_count}条文章"
+    .count= "共#{@comment_count}条评论"
+    .count= "共#{@user_count}名用户"
+

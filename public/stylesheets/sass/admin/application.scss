@@ -1,5 +1,17 @@
 @import "css3buttons.css";
-
+/* ======== dashboard ======== */
+.dashboard {
+  padding: 20px;
+  font-size: 1.2em;
+  .title {
+    float: left;
+  }
+  .count {
+    margin-left: 100px;
+    padding: 5px 0;
+    border-bottom: 1px dashed #ccc;
+  }
+}
 /* ======== general ======== */
 .top-margin-5 {
   margin-top: 5px;
