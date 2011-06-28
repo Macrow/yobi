@@ -1,11 +1,14 @@
 # coding: utf-8
 
 class Admin::ProductsController < Admin::ApplicationController
+
   before_filter :get_categories_tree, :get_plists, :only => [:new, :edit, :create, :update]
+  cache_sweeper :home_sweeper, :only => [:create, :update, :destroy]
+  cache_sweeper :product_sweeper, :only => [:create, :update, :destroy]
 
   def index
     @search = Product.search(params[:search])
-    @products = @search.includes(:category).page(params[:page])
+    @products = @search.includes(:category).order("created_at DESC").page(params[:page])
     @categories = Category.get_categories_tree(true)
   end
 

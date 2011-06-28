@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  caches_action :show
+
   def show
     @product = Product.find(params[:id], :include => [:category, [:comments => :user]])
     @category = @product.category

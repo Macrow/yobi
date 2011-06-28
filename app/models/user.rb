@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   attr_accessor :login
 
   has_many :articles, :dependent => :nullify
-  has_many :comments, :dependent => :destroy
+  has_many :comments, :dependent => :nullify
 
   def admin?
     admin

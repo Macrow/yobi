@@ -1,4 +1,5 @@
 class Admin::ImagesController < Admin::ApplicationController
+  cache_sweeper :product_sweeper, :only => [:create, :update, :destroy]
 
   def create
     @product = Product.find(params[:product_id])

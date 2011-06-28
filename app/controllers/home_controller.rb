@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  caches_page :index
   def index
     @elite_products = Product.where(:elite => true).includes(:major_image).limit(8)
     @price_off_products = Product.order("discount DESC").includes(:major_image).limit(8)

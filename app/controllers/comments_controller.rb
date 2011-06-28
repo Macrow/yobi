@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  cache_sweeper :product_sweeper, :only => [:create]
   def create
     @product = Product.find(params[:product_id])
     @comment = @product.comments.build(params[:comment])

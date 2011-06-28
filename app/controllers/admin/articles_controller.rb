@@ -1,4 +1,7 @@
+# coding: utf-8
+
 class Admin::ArticlesController < Admin::ApplicationController
+  cache_sweeper :article_sweeper, :only => [:update, :destroy]
 
   def index
     @articles = Article.order("created_at DESC").includes(:user).page(params[:page]).per(10)
@@ -29,7 +32,7 @@ class Admin::ArticlesController < Admin::ApplicationController
     @article = current_user.articles.build(params[:article])
     respond_to do |format|
       if @article.save
-        format.html { redirect_to [:admin, @article], :notice => 'Article was successfully created.' }
+        format.html { redirect_to [:admin, @article], :notice => "已添加 #{@article.title}！" }
       else
         format.html { render :action => "new" }
       end
@@ -41,7 +44,7 @@ class Admin::ArticlesController < Admin::ApplicationController
     @article = Article.find(params[:id])
     respond_to do |format|
       if @article.update_attributes(params[:article])
-        format.html { redirect_to [:admin, @article], :notice => 'Article was successfully updated.' }
+        format.html { redirect_to [:admin, @article], :notice => "已更新 #{@article.title}！" }
       else
         format.html { render :action => "edit" }
       end

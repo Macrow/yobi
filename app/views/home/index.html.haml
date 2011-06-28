@@ -9,6 +9,5 @@
     .more
   .body= render @price_off_products
 
-= content_for :script do
-  = javascript_include_tag "slidesjs/slides.min.jquery.js"
+= include_slides_scripts
 

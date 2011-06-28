@@ -3,16 +3,15 @@
 module Admin::ApplicationHelper
   def uploadify_js(product)
     content_for :script do
-      concat javascript_include_tag("/uploadify/jquery.uploadify.v2.1.4.min.js")
-      concat javascript_include_tag("/uploadify/swfobject.js")
+      concat javascript_include_tag("/uploadify/jquery.uploadify.v2.1.4.min.js",
+                                    "/uploadify/swfobject.js",
+                                    :cache => "uploadify")
       concat image_uploadify(admin_product_images_path(product), "image")
     end
   end
 
   def uploadify_and_kindeditor_js
     content_for :script do
-      concat javascript_include_tag("/uploadify/jquery.uploadify.v2.1.4.min.js")
-      concat javascript_include_tag("/uploadify/swfobject.js")
       concat javascript_include_tag("admin/kindeditor/kindeditor-min.js")
       concat javascript_include_tag("admin/kindeditor/kindeditor-init.js")
       concat image_uploadify(admin_dimages_path, "dimage")
@@ -21,14 +20,11 @@ module Admin::ApplicationHelper
 
   def uploadify_and_kindeditor_and_nested_form_js
     content_for :script do
-      concat javascript_include_tag("/uploadify/jquery.uploadify.v2.1.4.min.js")
-      concat javascript_include_tag("/uploadify/swfobject.js")
-      concat javascript_include_tag("admin/kindeditor/kindeditor-min.js")
-      concat javascript_include_tag("admin/kindeditor/kindeditor-init.js")
-      concat javascript_include_tag("admin/nested_form.js")
-      concat javascript_include_tag("client_validation/rails.validations.js")
-      concat image_uploadify(admin_dimages_path, "dimage")
+      concat javascript_include_tag("admin/nested_form.js",
+                                    "client_validation/rails.validations.js",
+                                    :cache => "nested_form_and_client_validation")
     end
+    uploadify_and_kindeditor_js
   end
 
   def include_lightbox_js

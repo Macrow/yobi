@@ -3,6 +3,7 @@
 class Admin::CommentsController < Admin::ApplicationController
 
   before_filter :find_product_or_user
+  cache_sweeper :product_sweeper, :only => [:update, :destroy]
 
   def index
   end
@@ -29,8 +30,12 @@ class Admin::CommentsController < Admin::ApplicationController
 
   def destory_all
     if @owner.instance_of?(Product)
+      expire_action(:controller => "/products", :action => "show", :id => @owner)
       Comment.delete_all(:commentable_id => @owner.id, :commentable_type => @owner.class.to_s)
     elsif @owner.instance_of?(User)
+      @owner.comments.each do |c|
+        expire_action(:controller => "/products", :action => "show", :id => c.commentable) if c.commentable.is_a?(Product)
+      end
       Comment.delete_all(:user_id => @owner.id)
     end
     redirect_to [:admin, @owner], :notice => "成功删除 #{@owner_name} 全部评论！"

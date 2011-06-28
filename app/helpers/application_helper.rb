@@ -9,6 +9,12 @@ module ApplicationHelper
     @show_title
   end
 
+  def include_slides_scripts
+    content_for :script do
+      javascript_include_tag "slidesjs/slides.min.jquery.js"
+    end
+  end
+
   def include_slide_js
     %Q{
     <script type='text/javascript'>

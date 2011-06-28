@@ -1,6 +1,7 @@
 class Admin::CategoriesController < Admin::ApplicationController
 
   before_filter :get_categories_tree, :only => [:new, :edit, :create, :update]
+  cache_sweeper :home_sweeper
 
   # GET /admin/categories
   # GET /admin/categories.json

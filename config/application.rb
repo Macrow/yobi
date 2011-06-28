@@ -30,7 +30,6 @@ module Yobi
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = "zh-CN"
-    config.i18n.fallbacks = true
 
     # Please note that JavaScript expansions are *ignored altogether* if the asset
     # pipeline is enabled (see config.assets.enabled below). Put your defaults in
@@ -44,6 +43,8 @@ module Yobi
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    ActionController::Base.cache_store = :file_store, "#{config.root}/tmp/cache"
   end
 end
 

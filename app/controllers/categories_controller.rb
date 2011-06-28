@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  #caches_page :show
+
   def show
     @category = Category.find(params[:id])
     @products = Product.products_in_category(params[:id]).includes(:major_image).order(get_order_params).page(params[:page])

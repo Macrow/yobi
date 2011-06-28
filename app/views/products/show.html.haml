@@ -1,4 +1,7 @@
 - title @product.name
+= content_for :script do
+  = javascript_include_tag "lightbox/jquery.lightbox.min.js"
+
 #product
   %h3= @product.name
   .span-9
@@ -24,7 +27,7 @@
   .span-18.last.top-margin-10
     .slide_panel
       .slide_panel_left
-      .slide_panel_content= render :partial => "products/product_elite", :collection => @relate_products, :as => :product
+      .slide_panel_content= render :partial => "products/product_sidebar", :collection => @relate_products, :as => :product
       .slide_panel_right
       .slide_book_icon
 #product-description.span-18.last
@@ -44,7 +47,4 @@
 - if user_signed_in?
   .span-18.last.top-margin-5
     = render "comments/form", :product => @product, :comment => Comment.new
-
-= content_for :script do
-  = javascript_include_tag "lightbox/jquery.lightbox.min.js"
 

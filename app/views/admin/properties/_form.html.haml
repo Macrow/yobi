@@ -1,5 +1,5 @@
 .property_form
-  = p.select :name, @plists.collect {|p| [ p.name, p.name ] }
+  = p.select :name, @plists.collect {|plist| [ plist.name, plist.name ] }
   = p.text_field :value
   = p.link_to_remove "删除", :class => "button pill negative"
 
