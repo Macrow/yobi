@@ -12,6 +12,12 @@ class Product < ActiveRecord::Base
   acts_as_commentable
   acts_as_taggable
 
+  has_friendly_id :name, :use_slug => true, :strip_non_ascii => true, :max_length => 50
+
+  def normalize_friendly_id(text)
+    text.to_url
+  end
+
   # include all subtree category
   scope :products_in_category, lambda {|id| where("category_id IN (SELECT categories.id FROM categories WHERE (categories.id = #{id} or ancestry like '#{id}/%' or categories.ancestry = '#{id}'))")}
   search_methods :products_in_category

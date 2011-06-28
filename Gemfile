@@ -21,6 +21,10 @@ gem 'acts-as-taggable-on'
 gem 'meta_search'
 gem 'rails_config'
 
+# SEO
+gem 'friendly_id', '~> 3.2.1'
+gem 'stringex'
+
 # authentication
 gem 'devise'
 

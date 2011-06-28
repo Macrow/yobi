@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-
   before_filter :get_categories, :initial_search
+
+  rescue_from Exception, :with => :render_all_errors
 
   protected
 
@@ -23,7 +24,28 @@ class ApplicationController < ActionController::Base
     order
   end
 
+  def render_all_errors(e)
+    # log_error(e) # log the error
+    # notify_about_exception(e) # send the error notification
+
+    # now handle the page
+    if e.is_a?(ActionController::RoutingError)
+      render_404(e)
+    else
+      render_other_error(e)
+    end
+  end
+
+  def render_404_error(e)
+    render :file => "#{Rails.root}/public/404.html", :status => "404 Not Found"
+  end
+
+  def render_other_error(e)
+    render :file => "#{Rails.root}/public/500.html", :layout => false, :status => "500"
+  end
+
   private
+
   def get_categories
     @categories ||= Category.arrange(:order => :created_at)
     @root_categories ||= @categories.keys

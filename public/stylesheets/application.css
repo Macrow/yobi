@@ -739,3 +739,10 @@ form label.inline-block {
 
 a {
   text-decoration: none; }
+
+.page-errors {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  font-size: 1.4em;
+  color: #D44444; }

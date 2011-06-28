@@ -1,8 +1,14 @@
 class Article < ActiveRecord::Base
   belongs_to :user
   validates_presence_of :title
-
   before_save :verify_safe
+
+  has_friendly_id :title, :use_slug => true, :strip_non_ascii => true, :max_length => 50
+
+  def normalize_friendly_id(text)
+    text.to_url
+  end
+
 
   def short_title(max = 25)
     cut_string("UTF-8", title, 0, max)

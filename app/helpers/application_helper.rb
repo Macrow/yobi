@@ -45,6 +45,7 @@ module ApplicationHelper
 
   def show_nav_path
     return nil if controller_name == "home" && action_name == "index"
+    return nil if controller_name == "redirect"
     output = "您现在的位置："
     output << link_to("首 页", root_path)
     if controller_name =~ /categories|products/i && action_name == "show"

@@ -31,6 +31,8 @@ Yobi::Application.routes.draw do
     root :to => "home#index"
   end
 
+  match "*path" => "redirect#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
