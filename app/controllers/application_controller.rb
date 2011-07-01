@@ -47,8 +47,14 @@ class ApplicationController < ActionController::Base
   private
 
   def get_categories
-    @categories ||= Category.arrange(:order => :created_at)
-    @root_categories ||= @categories.keys
+    unless fragment_exist?("navmenu")
+      @categories ||= Category.arrange(:order => :created_at)
+    end
+    if @categories.nil?
+      @tabs ||= Category.arrange(:order => :created_at).keys
+    else
+      @tabs ||= @categories.keys
+    end
   end
 
   def initial_search

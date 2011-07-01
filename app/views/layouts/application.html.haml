@@ -8,12 +8,13 @@
     = javascript_include_tag :defaults, :cache => "main"
     = yield(:script)
     = csrf_meta_tag
+    %link{:rel => "shortcut icon", :href => "/favicon.ico" }/
   .container
     .span-24= render "shared/top_user_tools"
     .span-24
       #logo
         %h1= link_to image_tag("Yobi-logo.png"), root_path
-      #tabs=show_tabs(@root_categories)
+      #tabs=show_tabs(@tabs)
     .span-24= render "shared/tabs_tools"
     .span-6= render "shared/sidebar"
     .span-18.last.top-margin-5

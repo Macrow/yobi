@@ -7,7 +7,6 @@ Yobi::Application.routes.draw do
   resources :articles, :only => [:show]
   devise_for :users
   match "/search" => "home#search"
-
   root :to => "home#index"
 
   namespace :admin do

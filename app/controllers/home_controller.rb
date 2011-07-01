@@ -12,5 +12,15 @@ class HomeController < ApplicationController
     @products = @search.includes(:major_image).order(get_order_params).page(params[:page])
     @quantity_products = Product.order("quantity DESC").includes(:major_image).limit(3)
   end
+
+  # TODO: implement sitemap support
+  #       sitemap.html & sitemap.xml
+  #       remember update robots.txt file
+  def sitemap
+    respond_to do |format|
+      format.html
+      format.xml
+    end
+  end
 end
 
