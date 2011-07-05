@@ -1,2 +1,5 @@
-$('#images').append('<%= escape_javascript(render(@image)) %>');
-
+<% if @image.valid? %>
+  $('#images').append('<%= escape_javascript(render(@image)) %>');
+<% else %>
+  
+<% end %>

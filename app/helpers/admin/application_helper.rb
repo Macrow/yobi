@@ -14,6 +14,9 @@ module Admin::ApplicationHelper
     content_for :script do
       concat javascript_include_tag("admin/kindeditor/kindeditor-min.js")
       concat javascript_include_tag("admin/kindeditor/kindeditor-init.js")
+      concat javascript_include_tag("/uploadify/jquery.uploadify.v2.1.4.min.js",
+                                    "/uploadify/swfobject.js",
+                                    :cache => "uploadify")
       concat image_uploadify(admin_dimages_path, "dimage")
     end
   end

@@ -6,6 +6,12 @@ $categories-title-color: #F18A0E;
 
 @import "blueprint/screen.css";
 
+h1.nav-path {
+	font-size:1em;
+	margin:0;
+	padding:0;
+	display:inline-block;
+}
 /* ======== home ======== */
 #slides {
   .slides_container {
@@ -359,7 +365,8 @@ span.price-big {
   color: #CC0000;
 }
 #product {
-  h3 {
+  h1 {
+		font-size: 2em;
     text-align: center;
     font-weight: bold;
     border-bottom: 1px dashed #ccc;
@@ -533,6 +540,15 @@ form.new_comment {
   text-align: center;
   overflow: hidden;
   float: left;
+	background:url("/images/Yobi-logo.png") no-repeat; 
+	text-indent:-10000px;
+	margin: 0;
+	padding: 0;
+	a { 
+		display:block; 
+		width:170px; 
+		height:88px;
+	}
 }
 
 #tabs {

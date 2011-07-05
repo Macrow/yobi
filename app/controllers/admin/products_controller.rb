@@ -5,6 +5,7 @@ class Admin::ProductsController < Admin::ApplicationController
   before_filter :get_categories_tree, :get_plists, :only => [:new, :edit, :create, :update]
   cache_sweeper :home_sweeper, :only => [:create, :update, :destroy]
   cache_sweeper :product_sweeper, :only => [:create, :update, :destroy]
+  cache_sweeper :category_sweeper, :only => [:create, :update, :destroy]
 
   def index
     @search = Product.search(params[:search])

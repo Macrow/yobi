@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
   validates_presence_of :name
   validates_numericality_of :retail_price, :present_price, :stock_count, :quantity, :greater_than_or_equal_to => 0
   before_save :verify_safe, :upate_discount
-  paginates_per 16
+  before_update :generate_meta_content
 
   acts_as_commentable
   acts_as_taggable
@@ -45,5 +45,14 @@ class Product < ActiveRecord::Base
       self.discount = 0
     end
   end
+
+  def generate_meta_content
+    if self.meta_keywords.blank?
+      self.meta_keywords = "#{self.name},#{category.name},财务配套用品,财务软件"
+    end
+    if self.meta_description.blank?
+      self.meta_description = "#{self.name},专业#{category.name}系列产品,友比最新价格为#{retail_price}元,为您节省开支!"
+    end
+  end  
 end
 

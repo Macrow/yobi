@@ -24,12 +24,13 @@ gem 'rails_config'
 # SEO
 gem 'friendly_id', '~> 3.2.1'
 gem 'stringex'
+gem 'big_sitemap'
 
 # authentication
 gem 'devise'
 
 group :development do
-  gem 'hirb-unicode'
+  gem 'ruby-debug'
 end
 
 # Use unicorn as the web server

@@ -3,7 +3,12 @@ Yobi::Application.routes.draw do
   resources :products, :only => [:show] do
     resources :comments, :only => [:create]
   end
-  resources :categories, :only => [:show]
+  resources :categories, :only => [:show] do
+    member do
+      get 'page/:page', :action => :show
+      get 'search', :action => :search      
+    end
+  end
   resources :articles, :only => [:show]
   devise_for :users
   match "/search" => "home#search"
@@ -26,6 +31,7 @@ Yobi::Application.routes.draw do
       get "admins", :on => :collection
     end
     match "/settings" => "settings#index"
+    match "/generate_sitemap" => "settings#generate_sitemap"
     resources :dimages, :only => [:index, :create, :destroy]
     root :to => "home#index"
   end

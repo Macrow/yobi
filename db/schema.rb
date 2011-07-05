@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110628160516) do
+ActiveRecord::Schema.define(:version => 20110703170455) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20110628160516) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cached_slug"
+    t.string   "meta_keywords"
+    t.string   "meta_description"
   end
 
   add_index "articles", ["cached_slug"], :name => "index_articles_on_cached_slug", :unique => true
@@ -30,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20110628160516) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cached_slug"
+    t.string   "meta_keywords"
+    t.string   "meta_description"
   end
 
   add_index "categories", ["ancestry"], :name => "index_categories_on_ancestry"
@@ -79,14 +83,16 @@ ActiveRecord::Schema.define(:version => 20110628160516) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
-    t.decimal  "retail_price",  :precision => 8, :scale => 2
-    t.decimal  "present_price", :precision => 8, :scale => 2
+    t.decimal  "retail_price",     :precision => 8, :scale => 2
+    t.decimal  "present_price",    :precision => 8, :scale => 2
     t.integer  "stock_count"
     t.string   "stock_number"
-    t.boolean  "elite",                                       :default => false
+    t.boolean  "elite",                                          :default => false
     t.integer  "discount"
-    t.integer  "quantity",                                    :default => 0
+    t.integer  "quantity",                                       :default => 0
     t.string   "cached_slug"
+    t.string   "meta_keywords"
+    t.string   "meta_description"
   end
 
   add_index "products", ["cached_slug"], :name => "index_products_on_cached_slug", :unique => true

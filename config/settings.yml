@@ -1,5 +1,9 @@
 site:
-  title: 欢迎访问友比科技！
+  url: www.51yobi.com
+  name: 友比财务用品网上商城！
+  home_title: 财务软件，财务配套，装订机，凭证，账册
+  keywords: 财务软件，财务配套，装订机，凭证，账册
+  description: 财务软件，财务配套，装订机，凭证，账册，我们更专业！
 slides:
   slide1:
     image: /images/slides/slide-1.jpg

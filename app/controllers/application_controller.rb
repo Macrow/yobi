@@ -27,21 +27,20 @@ class ApplicationController < ActionController::Base
   def render_all_errors(e)
     # log_error(e) # log the error
     # notify_about_exception(e) # send the error notification
-
     # now handle the page
-    if e.is_a?(ActionController::RoutingError)
-      render_404(e)
+    if e.is_a?(ActionController::RoutingError) || e.is_a?(ActiveRecord::RecordNotFound)
+      render_404_error(e)
     else
       render_other_error(e)
     end
   end
 
   def render_404_error(e)
-    render :file => "#{Rails.root}/public/404.html", :status => "404 Not Found"
+    render :file => "#{Rails.root}/public/404.html", :layout => false, :status => 404
   end
 
   def render_other_error(e)
-    render :file => "#{Rails.root}/public/500.html", :layout => false, :status => "500"
+    render :file => "#{Rails.root}/public/500.html", :layout => false, :status => 500
   end
 
   private

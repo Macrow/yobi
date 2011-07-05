@@ -1,7 +1,9 @@
 !!!
 %html
   %head
-    %title= show_title? ? yield(:title) : Settings.site.title
+    %title= show_title? ? yield(:title) : default_title
+    = content_for?(:meta) ? yield(:meta) : default_meta_content
+    %meta{"http-equiv" => "Content-Type", :content => "text/html", :charset => "utf-8"}/
     = stylesheet_link_tag "application.css"
     /[if lt IE 8]
       = stylesheet_link_tag "blueprint/ie.css"
@@ -12,9 +14,8 @@
   .container
     .span-24= render "shared/top_user_tools"
     .span-24
-      #logo
-        %h1= link_to image_tag("Yobi-logo.png"), root_path
-      #tabs=show_tabs(@tabs)
+      = show_logo
+      #tabs= show_tabs(@tabs)
     .span-24= render "shared/tabs_tools"
     .span-6= render "shared/sidebar"
     .span-18.last.top-margin-5

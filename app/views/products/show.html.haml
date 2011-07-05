@@ -1,9 +1,11 @@
-- title @product.name
+- title_with_sitename @product.name
+- meta_content(@product.meta_keywords, @product.meta_description)
+
 = content_for :script do
   = javascript_include_tag "lightbox/jquery.lightbox.min.js"
 
 #product
-  %h3= @product.name
+  %h1= @product.name
   .span-9
     - if @product.major_image.nil?
       = image_tag "/images/no-pic.png", :size => "320x320"
@@ -34,12 +36,12 @@
   %ul.tab_title
     %li.current
       %span 产品详情
-    %li= link_to "用户评价", "#product-comments"
+    %li= link_to "用户评价", "#product-comments", :rel => "nofollow"
 .span-18.last.top-margin-5
   .description= @product.description.html_safe
 #product-comments.span-18.last
   %ul.tab_title
-    %li= link_to "产品详情", "#product-description"
+    %li= link_to "产品详情", "#product-description", :rel => "nofollow"
     %li.current
       %span 用户评价
 .span-18.last.top-margin-5

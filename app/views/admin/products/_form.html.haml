@@ -1,3 +1,5 @@
+= uploadify_and_kindeditor_and_nested_form_js
+
 - if action_name.downcase == "edit"
   %p.float_right
     = link_to "查看", admin_product_path(@product), :class => "button"
@@ -7,6 +9,12 @@
     .field
       = f.label :name
       = f.text_field :name
+    .field
+      = f.label :meta_keywords
+      = f.text_field :meta_keywords
+    .field
+      = f.label :meta_description
+      = f.text_field :meta_description
     .field
       = f.label :stock_number
       = f.text_field :stock_number
@@ -52,6 +60,3 @@
       = f.submit
       或者
       = link_to "返回", admin_products_path
-
-= uploadify_and_kindeditor_and_nested_form_js
-

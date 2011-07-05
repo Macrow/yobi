@@ -1,6 +1,11 @@
 - title @category.name
-%p
+.product
   .float_right
     = link_to '编辑', edit_admin_category_path(@category), :class => "button"
     = link_to '返回', admin_categories_path, :class => "button"
-
+  .info
+    .title meta keywords
+    .content= @category.meta_keywords
+  .info
+    .title meta description
+    .content= @category.meta_description

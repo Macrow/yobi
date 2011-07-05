@@ -1,4 +1,4 @@
 User-Agent: *
 Disallow: /admin/
-Sitemap: /sitemap.index.xml
+Sitemap: http://www.51yobi.com/sitemap_index.xml
 

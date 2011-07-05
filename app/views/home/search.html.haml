@@ -1,13 +1,17 @@
+- title_with_sitename("搜索 #{params[:search][:name_contains]} 的结果")
+- canonical_link(search_url)
+- meta_content(Settings.site.keywords, Settings.site.description)
+
 .category_filter
   .btn_filter
     .search_tip 排序：
-    = show_order_icon_link(:q, "销量", false)
-    = show_order_icon_link(:p, "价格", true)
-    = show_order_icon_link(:d, "折扣", false)
-    = show_order_icon_link(:a, "最新上架", false)
+    = show_search_order_icon_link(:q, "销量", false)
+    = show_search_order_icon_link(:p, "价格", true)
+    = show_search_order_icon_link(:d, "折扣", false)
+    = show_search_order_icon_link(:a, "最新上架", false)
   .view_style
     浏览模式：
-    = show_view_style_icon_links
+    = show_search_view_style_icon_links
 = render_products_by_view_style(@products)
 #page= paginate @products
 - if @products.empty?

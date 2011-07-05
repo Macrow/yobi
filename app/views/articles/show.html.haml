@@ -1,5 +1,6 @@
-- title @article.title
+- title_with_sitename @article.title
+- meta_content(@article.meta_keywords, @article.meta_description)
 #product
-  %h3= @article.title
+  %h1= @article.title
   = @article.content.html_safe
 

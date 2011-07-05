@@ -4,9 +4,7 @@ class Admin::ImagesController < Admin::ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @image = @product.images.build(params[:image])
-    if @product.major_image.nil?
-      @image.is_major = true
-    end
+    @image.is_major = true if @product.major_image.nil?
 
     respond_to do |format|
       if @image.save

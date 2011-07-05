@@ -1,13 +1,19 @@
+= uploadify_and_kindeditor_js
+
 .form
   = form_for [:admin, @article] do |f|
     .field
       = f.label :title
       = f.text_field :title
     .field
+      = f.label :meta_keywords
+      = f.text_field :meta_keywords
+    .field
+      = f.label :meta_description
+      = f.text_field :meta_description
+    .field
       = f.label :content
       = f.text_area :content, :id => "kindeditor_id"
       #image_upload
     .actions
       = f.submit
-  = uploadify_and_kindeditor_js
-

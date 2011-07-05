@@ -1,5 +1,7 @@
 - title @product.name
 = uploadify_js(@product)
+= include_lightbox_js
+
 .float_right
   = link_to "编辑", edit_admin_product_path(@product), :class => "button"
   = link_to "返回", admin_products_path, :class => "button"
@@ -8,6 +10,12 @@
     .title 产品目录
     .content
       .attr= category_and_ancestors_path(@product.category)
+  .info
+    .title meta keywords
+    .content= @product.meta_keywords
+  .info
+    .title meta description
+    .content= @product.meta_description
   .info
     .title 产品信息
     .content
@@ -35,6 +43,3 @@
     .title 详细介绍
     .content
       .attr= @product.description.html_safe
-
-= include_lightbox_js
-

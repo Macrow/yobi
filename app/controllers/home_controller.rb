@@ -17,10 +17,6 @@ class HomeController < ApplicationController
   #       sitemap.html & sitemap.xml
   #       remember update robots.txt file
   def sitemap
-    respond_to do |format|
-      format.html
-      format.xml
-    end
   end
 end
 
