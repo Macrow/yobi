@@ -6,11 +6,15 @@ $categories-title-color: #F18A0E;
 
 @import "blueprint/screen.css";
 
+.debug {
+  border: 1px solid red;
+}
+
 h1.nav-path {
 	font-size:1em;
 	margin:0;
 	padding:0;
-	display:inline-block;
+	display:inline;
 }
 /* ======== home ======== */
 #slides {
@@ -283,13 +287,15 @@ h1.nav-path {
   background: $background;
   margin: 1px;
   display: inline-block;
-  _display:inline-block;
+  *display:inline;
+  *zoom:1;
   .image {
     text-align: center;
   }
   .column {
     display: block;
-    padding-left: 30px;
+    width: 120px;
+    padding-left: 20px;
     span.off { text-decoration: line-through; }
     span.red { color: #D10015; }
   }
@@ -316,6 +322,7 @@ h1.nav-path {
     overflow: hidden;
     .column {
       display: block;
+      width: 210px;
       padding-left: 30px;
       span.off { text-decoration: line-through; }
       span.red { color: #D10015; }
@@ -405,6 +412,8 @@ span.price-big {
       width: 60px;
       height: 60px;
       display: inline-block;
+      *display:inline;
+      *zoom:1;
     }
     .note {
       padding: 0 5px;
@@ -429,24 +438,25 @@ span.price-big {
 
 /* ======== product_elite ======== */
 .product_elite {
-  width: 193px;
+  width: 210px;
   height: 105px;
   margin: 10px 10px 10px 0;
   overflow: hidden;
-  display: inline-block;
+  display: block;
   .image {
     float: left;
     width: 100px;
   }
   .columns {
     margin-left: 100px;
-    width: 93px;
+    padding-top: 5px;
+    width: 100px;
     .column {
       span.off { text-decoration: line-through; }
       span.red { color: #D10015; }
     }
     .name {
-      height: 70px;
+      height: 60px;
       overflow: hidden;
     }
   }
@@ -539,20 +549,20 @@ form.new_comment {
   height: 60px;
   text-align: center;
   overflow: hidden;
-  float: left;
-	background:url("/images/Yobi-logo.png") no-repeat; 
-	text-indent:-10000px;
-	margin: 0;
-	padding: 0;
-	a { 
-		display:block; 
-		width:170px; 
-		height:88px;
-	}
+  float: left !important;
+  background:url("/images/Yobi-logo.gif") no-repeat;
+  text-indent:-10000px;
+  margin: 0;
+  padding: 0;
+  a {
+	display:block;
+	width:170px;
+	height:88px;
+  }
 }
 
 #tabs {
-  width: 750px;
+  width: 740px;
   margin-left: 200px;
   margin-top: 35px;
 }
@@ -575,10 +585,10 @@ form.new_comment {
     padding: 1px;
     background: $categories-title-color;
     float: left;
-    height: 20px;
+    height: 20px !important;
     position: relative;
-    width: 210px;
-    margin: 27px 20px 0 10px;
+    width: 210px !important;
+    margin: 27px 20px 0 10px !important;
     z-index: 11;
     text-align: center;
     font-size: 1.1em;
@@ -588,6 +598,7 @@ form.new_comment {
     border: 1px solid #333;
     border-bottom: none;
     border-radius: 5px 5px 0 0;
+    display:inline;
   }
   .search {
     background: url("/images/search.png") no-repeat scroll 0 0 transparent;
@@ -667,6 +678,7 @@ form.new_comment {
     }
   }
   ul {
+    margin: 0;
     padding:10px 0;
     li {
       height:26px;
@@ -676,6 +688,7 @@ form.new_comment {
       vertical-align:middle;
       cursor:pointer;
       display:block;
+      list-style:none;
       .tit {
         border-bottom:1px lighten($main-color, 50%) solid;
         display:block;
@@ -689,9 +702,10 @@ form.new_comment {
         position: relative;
         left: 5px;
         top: 8px;
-        background: url(/images/pagination.png) 0 0 no-repeat;
+        background: url(/images/pagination.gif) 0 -12px no-repeat;
       }
       ul {
+        margin: 0;
         position:absolute;
         width:200px;
         background:#fff;
@@ -718,7 +732,8 @@ form.new_comment {
         position: relative;
         left: 5px;
         top: 8px;
-        background: url(/images/pagination.png) 0 -12px no-repeat;
+        background: url(/images/pagination.gif) 0 0 no-repeat;
+        display: inline;
       }
       .h2-tit {
         position:absolute;
@@ -799,4 +814,3 @@ a {
   font-size: 1.4em;
   color: #D44444;
 }
-

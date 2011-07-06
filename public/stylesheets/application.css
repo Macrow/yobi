@@ -1,9 +1,12 @@
 @import url(blueprint/screen.css);
+.debug {
+  border: 1px solid red; }
+
 h1.nav-path {
   font-size: 1em;
   margin: 0;
   padding: 0;
-  display: inline-block; }
+  display: inline; }
 
 /* ======== home ======== */
 #slides .slides_container {
@@ -230,12 +233,14 @@ h1.nav-path {
   background: #f1f6fd;
   margin: 1px;
   display: inline-block;
-  _display: inline-block; }
+  *display: inline;
+  *zoom: 1; }
   .product .image {
     text-align: center; }
   .product .column {
     display: block;
-    padding-left: 30px; }
+    width: 120px;
+    padding-left: 20px; }
     .product .column span.off {
       text-decoration: line-through; }
     .product .column span.red {
@@ -261,6 +266,7 @@ h1.nav-path {
     overflow: hidden; }
     .product_full .columns .column {
       display: block;
+      width: 210px;
       padding-left: 30px; }
       .product_full .columns .column span.off {
         text-decoration: line-through; }
@@ -341,7 +347,9 @@ span.price-big {
   border: 1px solid #ccc;
   width: 60px;
   height: 60px;
-  display: inline-block; }
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
 #product .more_images .note {
   padding: 0 5px; }
 #product .description {
@@ -406,23 +414,24 @@ span.price-big {
 
 /* ======== product_elite ======== */
 .product_elite {
-  width: 193px;
+  width: 210px;
   height: 105px;
   margin: 10px 10px 10px 0;
   overflow: hidden;
-  display: inline-block; }
+  display: block; }
   .product_elite .image {
     float: left;
     width: 100px; }
   .product_elite .columns {
     margin-left: 100px;
-    width: 93px; }
+    padding-top: 5px;
+    width: 100px; }
     .product_elite .columns .column span.off {
       text-decoration: line-through; }
     .product_elite .columns .column span.red {
       color: #D10015; }
     .product_elite .columns .name {
-      height: 70px;
+      height: 60px;
       overflow: hidden; }
 
 /* ======== pagination ======== */
@@ -498,8 +507,8 @@ form.new_comment {
   height: 60px;
   text-align: center;
   overflow: hidden;
-  float: left;
-  background: url("/images/Yobi-logo.png") no-repeat;
+  float: left !important;
+  background: url("/images/Yobi-logo.gif") no-repeat;
   text-indent: -10000px;
   margin: 0;
   padding: 0; }
@@ -509,7 +518,7 @@ form.new_comment {
     height: 88px; }
 
 #tabs {
-  width: 750px;
+  width: 740px;
   margin-left: 200px;
   margin-top: 35px; }
 
@@ -570,10 +579,10 @@ form.new_comment {
     padding: 1px;
     background: #f18a0e;
     float: left;
-    height: 20px;
+    height: 20px !important;
     position: relative;
-    width: 210px;
-    margin: 27px 20px 0 10px;
+    width: 210px !important;
+    margin: 27px 20px 0 10px !important;
     z-index: 11;
     text-align: center;
     font-size: 1.1em;
@@ -582,7 +591,8 @@ form.new_comment {
     color: white;
     border: 1px solid #333;
     border-bottom: none;
-    border-radius: 5px 5px 0 0; }
+    border-radius: 5px 5px 0 0;
+    display: inline; }
   #tab-tools .search {
     background: url("/images/search.png") no-repeat scroll 0 0 transparent;
     height: 40px;
@@ -649,6 +659,7 @@ form.new_comment {
       color: #fff;
       font-size: 1.1em; }
   .CategoryTree ul {
+    margin: 0;
     padding: 10px 0; }
     .CategoryTree ul li {
       height: 26px;
@@ -657,7 +668,8 @@ form.new_comment {
       position: relative;
       vertical-align: middle;
       cursor: pointer;
-      display: block; }
+      display: block;
+      list-style: none; }
       .CategoryTree ul li .tit {
         border-bottom: 1px #b6cff6 solid;
         display: block;
@@ -670,8 +682,9 @@ form.new_comment {
         position: relative;
         left: 5px;
         top: 8px;
-        background: url(/images/pagination.png) 0 0 no-repeat; }
+        background: url(/images/pagination.gif) 0 -12px no-repeat; }
       .CategoryTree ul li ul {
+        margin: 0;
         position: absolute;
         width: 200px;
         background: #fff;
@@ -695,7 +708,8 @@ form.new_comment {
         position: relative;
         left: 5px;
         top: 8px;
-        background: url(/images/pagination.png) 0 -12px no-repeat; }
+        background: url(/images/pagination.gif) 0 0 no-repeat;
+        display: inline; }
       .CategoryTree ul li.selected .h2-tit {
         position: absolute;
         z-index: 88;

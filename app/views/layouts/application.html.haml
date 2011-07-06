@@ -21,7 +21,7 @@
     .span-18.last.top-margin-5
       - flash.each do |key,msg|
         = content_tag :div, msg, :class => key
-    .span-18.last= show_nav_path
+    = show_nav_path
     - if controller_name == "home" && action_name == "index"
       .span-12= render "shared/slides"
       .span-6.last= render "shared/articles"
