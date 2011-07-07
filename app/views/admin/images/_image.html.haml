@@ -1,8 +1,8 @@
 = div_for image do
-  = link_to image_tag(image.image.thumb.url, :size => "120x120"), image.image.url, :rel => "lightbox-mygallery", :title => image.image.to_s
+  = link_to image_tag(image.image.thumb.url, :size => "120x120"), image.image.url, :title => image.image.to_s, :class => "lightbox"
   .center= link_to '删除图片', [:admin, @product, image], :confirm => 'Are you sure?', :method => :delete, :remote => true, :class => "pill negative button"
   .center
-    - if image.is_major == true
+    - if image.is_major
       = check_box_tag "image[is_major]", "1", image.is_major, :id => "check_#{image.id}", :disabled => true
       = "<label for='check_#{image.id}' style='color:red'>已为主图片</label>".html_safe
     - else

@@ -30,12 +30,6 @@ module Admin::ApplicationHelper
     uploadify_and_kindeditor_js
   end
 
-  def include_lightbox_js
-    content_for :script do
-      concat javascript_include_tag("lightbox/jquery.lightbox.min.js")
-    end
-  end
-
   def admin_user_links
     output = ""
     if user_signed_in? && current_user.admin?

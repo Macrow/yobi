@@ -1,8 +1,6 @@
 - title_with_sitename @product.name
 - meta_content(@product.meta_keywords, @product.meta_description)
-
-= content_for :script do
-  = javascript_include_tag "lightbox/jquery.lightbox.min.js"
+= include_lightbox
 
 #product
   %h1= @product.name

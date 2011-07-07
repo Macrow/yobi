@@ -207,11 +207,11 @@ h1.nav-path {
   .view_style {
     margin: 12px 10px 0 400px;
     width: 250px;
-    height: 20px;
+    height: 25px;
     overflow: hidden;
     a {
-      margin: 1px 3px;
-      padding: 1px 3px;
+      margin: 0 3px;
+      padding: 0 3px;
     }
     a.current {
       border: 1px solid #ccc;
@@ -466,7 +466,7 @@ span.price-big {
   width: 95%;
   padding: 10px 0;
   .pagination {
-	  font-size: 13px;
+	  font-size: 1em;
 	  text-align:right;
 	  padding:4px 6px 4px 0;
 	  background-color:#fff;
@@ -475,7 +475,7 @@ span.price-big {
 	    color:#0030ce;
 	    text-decoration:none;
 	    padding:5px 6px 4px 5px;
-	    margin:0 3px 0 3px;
+	    margin:0 1px;
 	    border:1px solid #b7d8ee;
 	    &:hover, &:active {
 	      color:#0066a7;

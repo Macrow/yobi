@@ -8,6 +8,4 @@ jQuery(function(){
 		$(this).children(".tit").removeClass("h2-tit");
 		$(this).children("ul").hide();
 	})
-
-})
-
+});

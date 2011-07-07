@@ -61,7 +61,21 @@ module ApplicationHelper
       <meta name='Description', content='#{Settings.site.description}'>
     }.html_safe
   end
-  
+
+  def include_lightbox
+    content_for :script do
+      concat javascript_include_tag("lightbox/jquery.lightbox-0.5.min.js")
+      concat stylesheet_link_tag("lightbox/jquery.lightbox-0.5.css")
+    end
+    %Q{
+    <script type='text/javascript'>
+      $(function() {
+		    $('a.lightbox').lightBox();
+			});
+    </script>
+    }.gsub(/[\n ]+/, ' ').strip.html_safe
+  end
+
   def include_slides_scripts
     content_for :script do
       javascript_include_tag "slidesjs/slides.min.jquery.js"
