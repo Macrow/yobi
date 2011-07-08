@@ -11,11 +11,11 @@ class CreateImages < ActiveRecord::Migration
     end
 
     add_index :images, :product_id
-    add_foreign_key(:products, :images, :dependent => :delete)
+    add_foreign_key(:images, :products, :dependent => :delete)
   end
 
   def self.down
-    remove_foreign_key(:products, :images, :dependent => :delete)
+    remove_foreign_key(:images, :products, :dependent => :delete)
     remove_index :images, :product_id
     drop_table :images
   end

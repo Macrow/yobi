@@ -9,11 +9,11 @@ class CreateProperties < ActiveRecord::Migration
     end
 
     add_index :properties, :product_id
-    add_foreign_key(:products, :properties, :dependent => :delete)
+    add_foreign_key(:properties, :products, :dependent => :delete)
   end
 
   def self.down
-    remove_foreign_key(:products, :properties, :dependent => :delete)
+    remove_foreign_key(:properties, :products, :dependent => :delete)
     drop_table :properties
   end
 end

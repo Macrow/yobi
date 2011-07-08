@@ -80,6 +80,7 @@ GEM
     mime-types (1.16)
     mini_magick (3.3)
       subexec (~> 0.1.0)
+    mysql2 (0.2.11)
     nested_form (0.1.1)
     orm_adapter (0.0.5)
     polyglot (0.3.1)
@@ -144,6 +145,7 @@ DEPENDENCIES
   kaminari
   meta_search
   mini_magick
+  mysql2 (~> 0.2.7)
   nested_form
   rails (= 3.0.9)
   rails_config

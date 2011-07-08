@@ -1,11 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :get_categories, :initial_search
-
-  #rescue_from Exception, :with => :render_all_errors
-
+  rescue_from Exception, :with => :render_all_errors
+  
   protected
-
   def get_order_params
     order_string = %w{quantity present_price discount created_at}
     order = "products.created_at DESC"
@@ -36,11 +34,11 @@ class ApplicationController < ActionController::Base
   end
 
   def render_404_error(e)
-    render :file => "#{Rails.root}/public/404.html", :layout => false, :status => 404
+    render :file => "#{Rails.root}/public/404.html", :layout => "basic", :status => 404
   end
 
   def render_other_error(e)
-    render :file => "#{Rails.root}/public/500.html", :layout => false, :status => 500
+    render :file => "#{Rails.root}/public/500.html", :layout => "basic", :status => 500
   end
 
   private

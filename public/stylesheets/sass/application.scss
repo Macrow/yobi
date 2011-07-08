@@ -1,5 +1,5 @@
 $main-color: #144899;
-$top-nav-color: #F8F6F6;
+$top-nav-color: lighten($main-color, 64%);
 $background: lighten($main-color, 63%);
 $border: darken($background, 20%);
 $categories-title-color: #F18A0E;
@@ -8,6 +8,12 @@ $categories-title-color: #F18A0E;
 
 .debug {
   border: 1px solid red;
+}
+
+.empty-tab-tools {
+  height: 5px;
+  background: $main-color;
+  border-radius: 5px;
 }
 
 h1.nav-path {
@@ -808,9 +814,11 @@ a {
 }
 
 .page-errors {
-  height: 200px;
-  line-height: 200px;
+	margin-top: 10px;
+  height: 380px;
+  line-height: 380px;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.5em;
   color: #D44444;
+	background: $background;
 }

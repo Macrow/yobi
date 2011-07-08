@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title= show_title? ? yield(:title) : default_title
+    = content_for?(:meta) ? yield(:meta) : default_meta_content
+    %meta{"http-equiv" => "Content-Type", :content => "text/html", :charset => "utf-8"}/
+    = stylesheet_link_tag "application.css"
+    /[if lt IE 8]
+      = stylesheet_link_tag "blueprint/ie.css"
+    = javascript_include_tag :defaults, :cache => "main"
+    = yield(:script)
+    = csrf_meta_tag
+    %link{:rel => "shortcut icon", :href => "/favicon.ico" }/
+  .container
+    .span-24= render "shared/top_user_tools"
+    .span-24
+      = show_logo
+      #tabs= show_tabs(@tabs)
+    .span-24
+      .empty-tab-tools
+    .span-24= yield
+    .span-24= render "shared/footer"

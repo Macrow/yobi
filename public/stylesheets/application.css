@@ -2,6 +2,11 @@
 .debug {
   border: 1px solid red; }
 
+.empty-tab-tools {
+  height: 5px;
+  background: #144899;
+  border-radius: 5px; }
+
 h1.nav-path {
   font-size: 1em;
   margin: 0;
@@ -491,8 +496,8 @@ form.new_comment {
 #top-nav {
   height: 22px;
   line-height: 22px;
-  background: #f8f6f6;
-  border: 1px solid #cbbdbd;
+  background: #f6f9fe;
+  border: 1px solid #9bbdf2;
   border-top: none;
   padding: 2px 15px;
   border-radius: 0px 0px 5px 5px;
@@ -770,8 +775,10 @@ a {
   text-decoration: none; }
 
 .page-errors {
-  height: 200px;
-  line-height: 200px;
+  margin-top: 10px;
+  height: 380px;
+  line-height: 380px;
   text-align: center;
-  font-size: 1.4em;
-  color: #D44444; }
+  font-size: 1.5em;
+  color: #D44444;
+  background: #f1f6fd; }

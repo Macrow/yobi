@@ -159,4 +159,10 @@ ActiveRecord::Schema.define(:version => 20110703170455) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["user_name"], :name => "index_users_on_user_name", :unique => true
 
+  add_foreign_key "images", "products", :name => "images_product_id_fk", :dependent => :delete
+
+  add_foreign_key "products", "categories", :name => "products_category_id_fk", :dependent => :delete
+
+  add_foreign_key "properties", "products", :name => "properties_product_id_fk", :dependent => :delete
+
 end

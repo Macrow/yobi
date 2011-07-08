@@ -2,6 +2,18 @@
 input[type="text"] {
 	width: 500px;
 }
+
+#logo {
+	a {
+	  text-decoration: none;
+	}
+	a:link,a:visited {
+		color:#204CA0;
+	}
+	a:hover {
+		background-color:#204CA0;
+	}
+}
 /* ======== dashboard ======== */
 .dashboard {
   padding: 20px;
@@ -180,11 +192,11 @@ a {
   text-decoration: none;
 }
 a:link,a:visited {
-	color:#0054ff
+	color:#0054ff;
 }
 a:hover {
 	background-color:#0054ff;
-	color:#fff
+	color:#fff;
 }
 ul {
 	padding-left:2em;

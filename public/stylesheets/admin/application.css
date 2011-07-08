@@ -2,6 +2,13 @@
 input[type="text"] {
   width: 500px; }
 
+#logo a {
+  text-decoration: none; }
+#logo a:link, #logo a:visited {
+  color: #204CA0; }
+#logo a:hover {
+  background-color: #204CA0; }
+
 /* ======== dashboard ======== */
 .dashboard {
   padding: 20px;
