@@ -1,0 +1,11 @@
+- title "静态页面管理"
+%p
+  %table.table
+    %tbody
+      %tr
+        %th 题目
+        %th 网址
+        %th{:width => "120"} 操作
+      = render @staticpages
+  = paginate @staticpages
+

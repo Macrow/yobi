@@ -12,11 +12,13 @@ Yobi::Application.routes.draw do
   resources :articles, :only => [:show]
   devise_for :users
   match "/search" => "home#search"
+  match "/sitemap" => "home#sitemap"
   root :to => "home#index"
 
   namespace :admin do
     resources :articles
     resources :categories
+    resources :staticpages
     resources :plists, :except => [:new, :show]
     resources :products do
       resources :images, :only => [:create, :update, :destroy]
@@ -35,7 +37,8 @@ Yobi::Application.routes.draw do
     resources :dimages, :only => [:index, :create, :destroy]
     root :to => "home#index"
   end
-
+  
+  match "/:page_url" => "staticpages#show", :as => :static_page
   match "*path" => "redirect#index"
 
   # The priority is based upon order of creation:

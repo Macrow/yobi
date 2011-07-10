@@ -1,0 +1,7 @@
+%tr{:class => cycle(:even, :odd)}
+  %td= link_to staticpage.title, admin_staticpage_path(staticpage)
+  %td= link_to staticpage.page_url, static_page_path(staticpage.page_url), :target => "_blank"
+  %td
+    = link_to "编辑", edit_admin_staticpage_path(staticpage), :class => "pill button"
+    = link_to "删除", admin_staticpage_path(staticpage), :method => :delete, :confirm => "确定删除?", :class => "pill negative button"
+

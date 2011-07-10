@@ -1,0 +1,6 @@
+- title_with_sitename @staticpage.title
+- meta_content(@staticpage.meta_keywords, @staticpage.meta_description)
+#product
+  %h1= @staticpage.title
+  = @staticpage.content.html_safe
+

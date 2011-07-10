@@ -1,0 +1,17 @@
+- title @staticpage.title
+.product
+  .float_right
+    = link_to "编辑", edit_admin_staticpage_path(@staticpage), :class => "button"
+    = link_to "返回", admin_staticpages_path, :class => "button"
+  .info
+    .title 网址
+    .content= @staticpage.page_url
+  .info
+    .title meta keywords
+    .content= @staticpage.meta_keywords
+  .info
+    .title meta description
+    .content= @staticpage.meta_description
+  .info
+    .content= @staticpage.content.html_safe
+

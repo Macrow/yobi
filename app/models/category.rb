@@ -3,7 +3,7 @@ class Category < ActiveRecord::Base
   has_ancestry
   has_many :products, :dependent => :nullify
   validates_presence_of :name
-  before_update :generate_meta_content
+  before_save :generate_meta_content
 
   has_friendly_id :name, :use_slug => true, :strip_non_ascii => true, :max_length => 50
 

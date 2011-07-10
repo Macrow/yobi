@@ -134,6 +134,9 @@ module ApplicationHelper
     if controller_name == "home" && action_name == "search"
       output << " > " << "搜索 #{params[:search][:name_contains]} 的结果"
     end
+    if controller_name == "staticpages" && action_name == "show"
+      output << " > " << link_to(@staticpage.title, static_page_path(@staticpage.page_url))
+    end
     content_tag(:div, content_tag(:div, output.html_safe, :id => "nav-path"), :class => "span-18 last")
   end
 

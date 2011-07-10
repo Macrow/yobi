@@ -769,7 +769,8 @@ form label.inline-block {
   border-top: 2px solid #ccc;
   text-align: center;
   padding: 5px 0;
-  margin: 10px 0 20px 0; }
+  margin: 10px 0 20px 0;
+  line-height: 22px; }
 
 a {
   text-decoration: none; }

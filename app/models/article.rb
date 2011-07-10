@@ -1,8 +1,7 @@
 class Article < ActiveRecord::Base
   belongs_to :user
   validates_presence_of :title
-  before_save :verify_safe
-  before_update :generate_meta_content
+  before_save :verify_safe, :generate_meta_content
 
   has_friendly_id :title, :use_slug => true, :strip_non_ascii => true, :max_length => 50
 

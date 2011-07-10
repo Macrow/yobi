@@ -1,8 +1,14 @@
 #top-nav
   .user
-    您好，欢迎访问友比科技！
+    您好，欢迎访问友比财务商城！
     = link_to "[用户中心]", new_user_session_path, :rel => "nofollow"
     或者没有账户?
     = link_to "[注册新账户]", new_user_registration_path, :rel => "nofollow"
-  .right 关于我们 | 网站地图 | 常见问题 | 联系方式
-
+  .right
+    = link_to "关于我们", static_page_path("about"), :rel => "nofollow"
+    |
+    = link_to "网站地图", sitemap_path, :rel => "nofollow"
+    |
+    = link_to "常见问题", static_page_path("faq"), :rel => "nofollow"
+    |
+    = link_to "联系方式", static_page_path("contacts"), :rel => "nofollow"

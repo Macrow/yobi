@@ -6,8 +6,7 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :properties, :allow_destroy => true
   validates_presence_of :name
   validates_numericality_of :retail_price, :present_price, :stock_count, :quantity, :greater_than_or_equal_to => 0
-  before_save :verify_safe, :upate_discount
-  before_update :generate_meta_content
+  before_save :verify_safe, :upate_discount, :generate_meta_content
   default_scope order("products.created_at DESC")
   acts_as_commentable
   acts_as_taggable
