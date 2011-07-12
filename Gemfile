@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+# core
 gem 'rails', '3.0.9'
 gem 'sqlite3'
 gem 'mysql2', '~> 0.2.7'
@@ -10,6 +11,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'sass'
 
+# others
 gem 'ancestry'
 gem 'foreigner'
 gem 'kaminari'
@@ -22,24 +24,10 @@ gem 'acts-as-taggable-on'
 gem 'meta_search'
 gem 'rails_config'
 
-# SEO
+# seo
 gem 'friendly_id', '~> 3.2.1'
 gem 'stringex'
 gem 'big_sitemap'
 
 # authentication
 gem 'devise'
-
-group :development do
-  gem 'ruby-debug'
-end
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug'
-

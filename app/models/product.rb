@@ -1,3 +1,4 @@
+#coding: utf-8
 class Product < ActiveRecord::Base
   belongs_to :category
   has_many :images, :dependent => :destroy
@@ -47,10 +48,10 @@ class Product < ActiveRecord::Base
 
   def generate_meta_content
     if self.meta_keywords.blank?
-      self.meta_keywords = "#{self.name},#{category.name},财务配套用品,财务软件"
+      self.meta_keywords = "#{self.name},#{self.category.name},财务配套用品,财务软件"
     end
     if self.meta_description.blank?
-      self.meta_description = "#{self.name},专业#{category.name}系列产品,友比最新价格为#{retail_price}元,为您节省开支!"
+      self.meta_description = "#{self.name},专业#{self.category.name}系列产品,友比最新价格为#{retail_price}元,为您节省开支!"
     end
   end  
 end

@@ -1,3 +1,4 @@
+# coding: utf-8
 class Admin::StaticpagesController < Admin::ApplicationController
   cache_sweeper :staticpage_sweeper, :only => [:update, :destroy]
 
