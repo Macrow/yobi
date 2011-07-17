@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :get_categories, :initial_search
-  rescue_from Exception, :with => :render_all_errors
+  before_filter :get_tabs, :get_categories, :initial_search
+  #rescue_from Exception, :with => :render_all_errors
   
   protected
   def get_order_params
@@ -43,19 +43,15 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def get_tabs
+    @tabs ||= Menu.public_menus
+  end
+
   def get_categories
-    unless fragment_exist?("navmenu")
-      @categories ||= Category.arrange(:order => :created_at)
-    end
-    if @categories.nil?
-      @tabs ||= Category.arrange(:order => :created_at).keys
-    else
-      @tabs ||= @categories.keys
-    end
+    @categories ||= Category.arrange(:order => :created_at) unless fragment_exist?("categories_navmenu")
   end
 
   def initial_search
     @search = Product.search(params[:search])
   end
 end
-

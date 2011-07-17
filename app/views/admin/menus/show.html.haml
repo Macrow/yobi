@@ -1,0 +1,23 @@
+- title @menu.name
+.product
+  .float_right
+    = link_to "编辑", edit_admin_menu_path(@menu), :class => "button"
+    = link_to "返回", admin_menus_path, :class => "button"
+  .info
+    .title 指向地址
+    .content= @menu.url
+  .info
+    .title 是否新窗口打开
+    .content= @menu.is_new_window
+  .info
+    .title 是否推荐
+    .content= @menu.is_elite
+  .info
+    .title 是否最新
+    .content= @menu.is_new
+  .info
+    .title 是否隐藏
+    .content= @menu.is_hidden
+  .info
+    .title 排序号
+    .content= @menu.order

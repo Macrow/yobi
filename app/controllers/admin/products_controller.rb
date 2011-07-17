@@ -30,7 +30,7 @@ class Admin::ProductsController < Admin::ApplicationController
   def create
     @product = Product.new(params[:product])
     if @product.save
-      redirect_to [:admin, :products], :notice => "已添加 #{@product.name}！"
+      redirect_to [:admin, @product], :notice => "已添加 #{@product.name}！"
     else
       render :action => :new
     end

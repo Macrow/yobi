@@ -1,0 +1,25 @@
+.form
+  = form_for [:admin, @menu] do |f|
+    .field
+      = f.label :name
+      = f.text_field :name
+    .field
+      = f.label :url
+      = f.text_field :url
+    .field
+      = f.label :is_new_window
+      = f.check_box :is_new_window
+    .field
+      = f.label :is_elite
+      = f.check_box :is_elite
+    .field
+      = f.label :is_new
+      = f.check_box :is_new
+    .field
+      = f.label :is_hidden
+      = f.check_box :is_hidden
+    .field
+      = f.label :order
+      = f.text_field :order
+    .actions
+      = f.submit

@@ -1,18 +1,18 @@
 development:
   adapter: mysql2
-  database: mybi_development
+  database: yobi_development
   host: localhost
   username: root
   password: 
 test:
     adapter: mysql2
-    database: mybi_test
+    database: yobi_test
     host: localhost
     username: root
     password:
 production:
     adapter: mysql2
-    database: mybi
+    database: yobi
     host: localhost
     username: root
     password:

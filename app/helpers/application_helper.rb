@@ -140,12 +140,27 @@ module ApplicationHelper
     content_tag(:div, content_tag(:div, output.html_safe, :id => "nav-path"), :class => "span-18 last")
   end
 
-  def show_tabs(categories)
+  def show_tabs_old(categories)
     css = ((controller_name == "home" || controller_name != "categories") ? "current" : "")
     output = content_tag(:li, content_tag(:span, link_to("首 页", root_path, :rel => "nofollow")), :class => css)
     categories.each do |c|
       css = ((controller_name == "categories" and params[:id] == c.name.to_url) ? "current" : "")
       output << content_tag(:li, content_tag(:span, link_to(c.name, c)), :class => css)
+    end
+    output = content_tag(:ul, output, :class => "tabs")
+    output.html_safe
+  end
+
+  def show_tabs(tabs)
+    css = controller_name == "home" ? "current" : ""
+    output = content_tag(:li, content_tag(:span, link_to("首 页", root_path, :rel => "nofollow")), :class => css)
+    tabs.each do |t|
+      css = request.fullpath == t.url ? "current" : ""
+      if t.is_new_window
+        output << content_tag(:li, content_tag(:span, link_to(t.name, t.url, :target => "_blank")), :class => css)
+      else
+        output << content_tag(:li, content_tag(:span, link_to(t.name, t.url)), :class => css)
+      end
     end
     output = content_tag(:ul, output, :class => "tabs")
     output.html_safe

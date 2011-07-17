@@ -1,0 +1,10 @@
+%tr{:class => cycle(:even, :odd)}
+  %td= link_to menu.name, admin_menu_path(menu)
+  %td= link_to menu.url, menu.url, :target => "new"
+  %td= menu.is_new_window
+  %td= menu.is_elite
+  %td= menu.is_new
+  %td= menu.is_hidden
+  %td
+    = link_to "编辑", edit_admin_menu_path(menu), :class => "pill button"
+    = link_to "删除", admin_menu_path(menu), :method => :delete, :confirm => "Are you sure?", :class => "pill negative button"

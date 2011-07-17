@@ -16,7 +16,7 @@ class MenuSweeper < ActionController::Caching::Sweeper
   private
 
   def expire_menu
-    expire_fragment("navmenu")
+    expire_fragment("categories_navmenu")
   end
 end
 

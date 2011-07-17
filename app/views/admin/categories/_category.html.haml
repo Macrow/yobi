@@ -3,4 +3,4 @@
   = link_to '编辑', edit_admin_category_path(category), :class => "button"
   = link_to '删除', admin_category_path(category), :confirm => 'Are you sure?', :method => :delete, :class => "negative button"
   = link_to "<span class='plus icon'></span>在此目录创建产品".html_safe, new_admin_product_path(:category_id => category.id), :class => "button"
-
+  = link_to "<span class='plus icon'></span>添加到导航菜单".html_safe, new_admin_menu_path(:category_id => category.id), :class => "button"

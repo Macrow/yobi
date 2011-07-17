@@ -1,0 +1,13 @@
+- title "导航菜单管理"
+%p
+  %table.table
+    %tbody
+      %tr
+        %th 名称
+        %th 地址
+        %th 是否新窗口打开
+        %th 是否推荐
+        %th 是否最新
+        %th 是否隐藏
+        %th{:width => "120"} 操作
+      = render @menus

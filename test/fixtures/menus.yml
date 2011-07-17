@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  url: MyString
+  is_elite: false
+  is_new: false
+  is_hidden: false
+
+two:
+  name: MyString
+  url: MyString
+  is_elite: false
+  is_new: false
+  is_hidden: false

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110710130822) do
+ActiveRecord::Schema.define(:version => 20110717062225) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -72,6 +72,18 @@ ActiveRecord::Schema.define(:version => 20110710130822) do
   end
 
   add_index "images", ["product_id"], :name => "index_images_on_product_id"
+
+  create_table "menus", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.integer  "order",         :default => 0
+    t.boolean  "is_new_window", :default => false
+    t.boolean  "is_elite",      :default => false
+    t.boolean  "is_new",        :default => false
+    t.boolean  "is_hidden",     :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "plists", :force => true do |t|
     t.string "name"
