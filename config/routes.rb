@@ -1,5 +1,4 @@
 Yobi::Application.routes.draw do
-
   resources :products, :only => [:show] do
     resources :comments, :only => [:create]
   end
@@ -11,8 +10,9 @@ Yobi::Application.routes.draw do
   end
   resources :articles, :only => [:show]
   devise_for :users
-  match "/search" => "home#search"
-  match "/sitemap" => "home#sitemap"
+  get "my_account" => "users#show", :as => "my_account"
+  get "/search" => "home#search"
+  get "/sitemap" => "home#sitemap"
   root :to => "home#index"
 
   namespace :admin do

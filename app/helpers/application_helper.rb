@@ -28,9 +28,9 @@ module ApplicationHelper
   
   def show_logo
     if controller_name == "home"
-      content_tag(:h1, link_to(Settings.site.name, "http://#{Settings.site.url}"), :id => "logo")
+      content_tag(:h1, link_to(Settings.site.name, root_url), :id => "logo")
     else
-      content_tag(:div, link_to(Settings.site.name, "http://#{Settings.site.url}"), :id => "logo")
+      content_tag(:div, link_to(Settings.site.name, root_url), :id => "logo")
     end
   end
   
@@ -103,7 +103,7 @@ module ApplicationHelper
   end
 
   def product_major_image(product, size = "150x150")
-    image = product.major_image.nil? ? "/images/no-pic.png" : product.major_image.image.thumb.url
+    image = product.major_image.nil? ? "/images/no-pic.gif" : product.major_image.image.thumb.url
     link_to image_tag(image, :size => size, :alt => product.name, :title => product.name), product, :rel => "nofollow"
   end
 
@@ -128,27 +128,19 @@ module ApplicationHelper
     if controller_name == "articles" && action_name == "show"
       output << " > " << "资讯" << " > " << @article.title
     end
-    if controller_name =~ /passwords|registrations|sessions/i
+    if controller_name =~ /passwords|registrations|sessions|users/i
       output << " > " << "用户中心"
     end
     if controller_name == "home" && action_name == "search"
-      output << " > " << "搜索 #{params[:search][:name_contains]} 的结果"
+      output << " > " << "搜索 \"#{params[:search][:name_contains]}\" 的结果"
+    end
+    if controller_name == "home" && action_name == "sitemap"
+      output << " > " << link_to("网站地图", sitemap_path)
     end
     if controller_name == "staticpages" && action_name == "show"
       output << " > " << link_to(@staticpage.title, static_page_path(@staticpage.page_url))
     end
     content_tag(:div, content_tag(:div, output.html_safe, :id => "nav-path"), :class => "span-18 last")
-  end
-
-  def show_tabs_old(categories)
-    css = ((controller_name == "home" || controller_name != "categories") ? "current" : "")
-    output = content_tag(:li, content_tag(:span, link_to("首 页", root_path, :rel => "nofollow")), :class => css)
-    categories.each do |c|
-      css = ((controller_name == "categories" and params[:id] == c.name.to_url) ? "current" : "")
-      output << content_tag(:li, content_tag(:span, link_to(c.name, c)), :class => css)
-    end
-    output = content_tag(:ul, output, :class => "tabs")
-    output.html_safe
   end
 
   def show_tabs(tabs)

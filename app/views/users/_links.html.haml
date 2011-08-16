@@ -1,0 +1,11 @@
+.relative 相关链接：
+%br/
+- if user_signed_in?
+  = link_to("退 出", destroy_user_session_path)
+  %br/
+- else
+  = link_to "登 录", new_user_session_path
+  %br/
+  = link_to "注册新用户", new_user_registration_path
+  %br/
+  = link_to "忘记密码？", new_user_password_path

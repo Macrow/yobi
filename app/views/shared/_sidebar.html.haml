@@ -3,8 +3,13 @@
     #navmenu
       .ColLeft.fl
         .CategoryTree
-          .title-bottom
           %ul= show_categories_menu(@categories)
+  #leftbox
+    .head 产品搜索
+    .body.search
+      = form_for @search, :url => search_path, :html => {:method => :get} do |f|
+        %span= f.text_field :name_contains, :maxlength => 10
+        %button{:type => "submit"} 搜 索
   - if controller_name =~ /home|categories|products/i
     #leftbox
       .head 热销产品

@@ -1,0 +1,9 @@
+- title_with_sitename "我的账户"
+.span-9
+  - if user_signed_in?
+    .user-message= "#{current_user.user_name} 你好，您已经登录！"
+  - else
+    .user-message= "您还没有登录！"
+.span-9.last
+  .login-tools
+    = render :partial => "links"

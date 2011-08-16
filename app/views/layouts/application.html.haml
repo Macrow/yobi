@@ -16,15 +16,15 @@
     .span-24
       = show_logo
       #tabs= show_tabs(@tabs)
-    .span-24= render "shared/tabs_tools"
+      .tabs-line
     .span-6= render "shared/sidebar"
-    .span-18.last.top-margin-5
+    .span-18.last.top-margin-10
       - flash.each do |key,msg|
         = content_tag :div, msg, :class => key
-    = show_nav_path
-    - if controller_name == "home" && action_name == "index"
-      .span-12= render "shared/slides"
-      .span-6.last= render "shared/articles"
+      = show_nav_path
+      - if controller_name == "home" && action_name == "index"
+        .span-12= render "shared/slides"
+        .span-6.last= render "shared/articles"
     .span-18.last= yield
     .span-24= render "shared/footer"
 

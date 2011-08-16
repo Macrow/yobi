@@ -14,31 +14,33 @@ h1.nav-path {
   display: inline; }
 
 /* ======== home ======== */
-#slides .slides_container {
-  width: 470px;
-  height: 220px; }
-#slides .slides_container div {
-  width: 470px;
-  height: 220px;
-  display: block; }
-#slides .pagination {
-  margin: 3px auto 0;
-  width: 100px; }
-#slides .pagination li {
-  float: left;
-  margin: 0 1px;
-  list-style: none; }
-#slides .pagination li a {
-  display: block;
-  width: 12px;
-  height: 0;
-  padding-top: 12px;
-  background-image: url("/images/pagination.png");
-  background-position: 0 0;
-  float: left;
-  overflow: hidden; }
-#slides .pagination li.current a {
-  background-position: 0 -12px; }
+#slides {
+  margin: 0; }
+  #slides .slides_container {
+    width: 470px;
+    height: 220px; }
+  #slides .slides_container div {
+    width: 470px;
+    height: 220px;
+    display: block; }
+  #slides .pagination {
+    margin: 2px auto;
+    width: 100px; }
+  #slides .pagination li {
+    float: left;
+    margin: 0 1px;
+    list-style: none; }
+  #slides .pagination li a {
+    display: block;
+    width: 12px;
+    height: 0;
+    padding-top: 12px;
+    background-image: url("/images/pagination.gif");
+    background-position: 0 0;
+    float: left;
+    overflow: hidden; }
+  #slides .pagination li.current a {
+    background-position: 0 -12px; }
 
 #elite {
   margin: 3px 0; }
@@ -121,6 +123,8 @@ h1.nav-path {
   #leftbox .body {
     padding: 5px;
     text-align: center; }
+  #leftbox .search input {
+    width: 140px; }
 
 .empty_search {
   text-align: center;
@@ -239,7 +243,8 @@ h1.nav-path {
   margin: 1px;
   display: inline-block;
   *display: inline;
-  *zoom: 1; }
+  *zoom: 1;
+  vertical-align: top; }
   .product .image {
     text-align: center; }
   .product .column {
@@ -353,6 +358,8 @@ span.price-big {
   width: 60px;
   height: 60px;
   display: inline-block;
+  *margin: 1px;
+  _margin: 1px;
   *display: inline;
   *zoom: 1; }
 #product .more_images .note {
@@ -419,22 +426,28 @@ span.price-big {
 
 /* ======== product_elite ======== */
 .product_elite {
-  width: 210px;
+  width: 200px;
   height: 105px;
-  margin: 10px 10px 10px 0;
+  margin: 10px 0 10px 0;
   overflow: hidden;
-  display: block; }
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
   .product_elite .image {
     float: left;
-    width: 100px; }
+    width: 100px;
+    height: 100px; }
   .product_elite .columns {
     margin-left: 100px;
     padding-top: 5px;
+    _margin-top: -105px;
     width: 100px; }
-    .product_elite .columns .column span.off {
-      text-decoration: line-through; }
-    .product_elite .columns .column span.red {
-      color: #D10015; }
+    .product_elite .columns .column {
+      width: 99%; }
+      .product_elite .columns .column span.off {
+        text-decoration: line-through; }
+      .product_elite .columns .column span.red {
+        color: #D10015; }
     .product_elite .columns .name {
       height: 60px;
       overflow: hidden; }
@@ -481,7 +494,9 @@ span.price-big {
       float: left;
       margin-right: 20px; }
   .comment .body {
-    padding: 10px; }
+    padding: 10px;
+    white-space: normal;
+    word-break: break-all; }
 
 form.new_comment {
   border: 1px solid #aaa;
@@ -520,12 +535,22 @@ form.new_comment {
   #logo a {
     display: block;
     width: 170px;
-    height: 88px; }
+    height: 88px;
+    border: 1px; }
 
 #tabs {
   width: 740px;
-  margin-left: 200px;
-  margin-top: 35px; }
+  margin: 35px 0 0 200px;
+  *margin: 18px 0 0 200px;
+  /*ie7*/
+  _margin: 18px 0 0 200px;
+  /*ie6*/ }
+
+.tabs-line {
+  height: 2px;
+  line-height: 2px;
+  overflow: hidden;
+  background: #144899; }
 
 .tabs, .tabs li, .tabs li a, .tabs li a.current, .tabs li.current span {
   background: url(/images/tabs.gif) no-repeat; }
@@ -576,156 +601,89 @@ form.new_comment {
   color: #fff;
   padding: 3px 11px 0 14px; }
 
-#tab-tools {
-  height: 50px;
-  background: #144899;
-  border-radius: 5px 5px 5px 0; }
-  #tab-tools .all-categories {
-    padding: 1px;
-    background: #f18a0e;
-    float: left;
-    height: 20px !important;
-    position: relative;
-    width: 210px !important;
-    margin: 27px 20px 0 10px !important;
-    z-index: 11;
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: bold;
-    line-height: 26px;
-    color: white;
-    border: 1px solid #333;
-    border-bottom: none;
-    border-radius: 5px 5px 0 0;
-    display: inline; }
-  #tab-tools .search {
-    background: url("/images/search.png") no-repeat scroll 0 0 transparent;
-    height: 40px;
-    width: 410px;
-    float: left;
-    margin-top: 5px; }
-    #tab-tools .search input {
-      background: none repeat scroll 0 0 transparent;
-      border: 0 none;
-      height: 26px;
-      margin: 8px 0 0 4px;
-      padding-left: 5px;
-      vertical-align: top;
-      width: 317px; }
-    #tab-tools .search button {
-      background: none repeat scroll 0 0 transparent;
-      border: medium none;
-      cursor: pointer;
-      height: 25px;
-      margin-top: 8px;
-      text-indent: -10000em;
-      width: 70px; }
-
 /* ======== navmenu ======== */
-#navmenu a {
-  text-decoration: none;
-  font-size: 1.1em; }
-
-.ColLeft {
-  width: 230px;
-  background: #f6f9fe; }
-
-.ColRight {
-  width: 740px;
-  background: #fff;
-  padding: 5px; }
-
-.ColCenter {
-  width: 530px; }
-
-.SideBar {
-  width: 200px; }
-
-.extra {
-  width: 300px; }
-
-.CategoryTree {
-  border: 1px #144899 solid;
-  border-top: none; }
-  .CategoryTree .title-bottom {
-    width: 212px;
-    height: 5px;
-    border: 1px solid #333;
-    border-top: none;
-    border-radius: 0 0 5px 5px;
-    background: #f18a0e;
-    margin-left: 9px; }
-  .CategoryTree .titlebar {
-    height: 20px;
-    line-height: 20px;
-    background: #144899; }
-    .CategoryTree .titlebar p {
-      text-align: center;
-      color: #fff;
-      font-size: 1.1em; }
-  .CategoryTree ul {
-    margin: 0;
+#navmenu {
+  margin-top: 5px;
+  /*====布局===========================================================================================*/
+  /*====产品目录=====================================================================================================*/ }
+  #navmenu .ColLeft {
+    width: 230px;
+    background: #fff;
+    padding: 5px 0; }
+  #navmenu .ColRight {
+    width: 740px;
+    background: #fff;
+    padding: 5px 0; }
+  #navmenu .ColCenter {
+    width: 530px; }
+  #navmenu .SideBar {
+    width: 200px; }
+  #navmenu .extra {
+    width: 300px; }
+  #navmenu .CategoryTree {
+    border: 1px #97baf1 solid; }
+  #navmenu .CategoryTree ul {
     padding: 10px 0; }
-    .CategoryTree ul li {
-      height: 26px;
-      line-height: 26px;
-      padding: 0 10px;
-      position: relative;
-      vertical-align: middle;
-      cursor: pointer;
-      display: block;
-      list-style: none; }
-      .CategoryTree ul li .tit {
-        border-bottom: 1px #b6cff6 solid;
-        display: block;
-        font-weight: bold;
-        padding-left: 30px; }
-      .CategoryTree ul li .icon {
-        float: left;
-        height: 12px;
-        width: 12px;
-        position: relative;
-        left: 5px;
-        top: 8px;
-        background: url(/images/pagination.gif) 0 -12px no-repeat; }
-      .CategoryTree ul li ul {
-        margin: 0;
-        position: absolute;
-        width: 200px;
-        background: #fff;
-        border: 1px #666 solid;
-        left: 168px;
-        top: 0;
-        display: none;
-        padding: 5px 10px 20px 10px; }
-        .CategoryTree ul li ul li {
-          border-bottom: 1px #b6cff6 dashed;
-          margin: 0 10px 3px 10px;
-          padding: 0 10px; }
-    .CategoryTree ul li.selected {
-      z-index: 99;
-      position: relative; }
-      .CategoryTree ul li.selected .icon {
-        z-index: 99;
-        float: left;
-        height: 12px;
-        width: 12px;
-        position: relative;
-        left: 5px;
-        top: 8px;
-        background: url(/images/pagination.gif) 0 0 no-repeat;
-        display: inline; }
-      .CategoryTree ul li.selected .h2-tit {
-        position: absolute;
-        z-index: 88;
-        background: #fff;
-        border: 1px #144899 solid;
-        border-right: 0;
-        width: 129px;
-        height: 24px;
-        line-height: 24px;
-        padding-left: 33px;
-        margin-left: -4px; }
+  #navmenu .CategoryTree ul li {
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    display: block; }
+  #navmenu .CategoryTree ul li .icon {
+    float: left;
+    height: 12px;
+    width: 12px;
+    position: relative;
+    left: 5px;
+    top: 8px;
+    background: url(/images/pagination.gif) 0 -12px no-repeat; }
+  #navmenu .CategoryTree ul li .tit {
+    padding-left: 30px;
+    border-bottom: 1px #e4e4e4 solid;
+    display: block;
+    font-weight: bold; }
+  #navmenu .CategoryTree ul li ul {
+    position: absolute;
+    width: 200px;
+    background: #fff;
+    border: 1px #97baf1 solid;
+    left: 178px;
+    top: 0;
+    display: none; }
+  #navmenu .CategoryTree ul li ul {
+    padding: 0 10px; }
+  #navmenu .CategoryTree ul li ul li i {
+    color: #97baf1;
+    padding: 0 10px; }
+  #navmenu .CategoryTree ul li.selected {
+    z-index: 99;
+    position: relative; }
+  #navmenu .CategoryTree ul li.selected .icon {
+    z-index: 99;
+    float: left;
+    height: 12px;
+    width: 12px;
+    position: relative;
+    left: 5px;
+    top: 8px;
+    background: url(/images/pagination.gif) 0 0 no-repeat;
+    display: inline; }
+  #navmenu .CategoryTree ul li.selected .h2-tit {
+    position: absolute;
+    z-index: 88;
+    background: #fff;
+    border: 1px #97baf1 solid;
+    border-bottom: 2px #97baf1 solid;
+    border-right: 0;
+    width: 139px;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 29px;
+    *margin-left: -12px;
+    _margin-left: -12px; }
 
 /* ======== login & register & errors ======== */
 .login-box {
@@ -783,3 +741,9 @@ a {
   font-size: 1.5em;
   color: #D44444;
   background: #f1f6fd; }
+
+.user-message {
+  width: 99%;
+  height: 200px;
+  text-align: center;
+  line-height: 200px; }

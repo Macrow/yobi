@@ -6,7 +6,7 @@
   %h1= @product.name
   .span-9
     - if @product.major_image.nil?
-      = image_tag "/images/no-pic.png", :size => "320x320"
+      = image_tag "/images/no-pic.gif", :size => "320x320"
     - else
       = image_tag @product.major_image.image.url, :size => "320x320"
     .more_images
