@@ -685,6 +685,17 @@ form.new_comment {
     *margin-left: -12px;
     _margin-left: -12px; }
 
+/* ======== sitemap ======== */
+#sitemap {
+  margin-top: 5px;
+  padding: 20px; }
+  #sitemap li ul li {
+    list-style: none;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin: 10px; }
+
 /* ======== login & register & errors ======== */
 .login-box {
   padding: 20px;

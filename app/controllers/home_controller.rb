@@ -13,10 +13,7 @@ class HomeController < ApplicationController
     @quantity_products = Product.order("quantity DESC").includes(:major_image).limit(3)
   end
 
-  # TODO: implement sitemap support
-  #       sitemap.html & sitemap.xml
-  #       remember update robots.txt file
   def sitemap
+    @categories = Category.arrange(:order => :created_at) if @categories.nil?
   end
 end
-

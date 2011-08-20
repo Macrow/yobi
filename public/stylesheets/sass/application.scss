@@ -630,6 +630,12 @@ form.new_comment {
 	.CategoryTree ul li.selected .icon {z-index:99;float:left;height:12px;width:12px;position:relative;left:5px;top:8px;background:url(/images/pagination.gif) 0 0 no-repeat;display:inline;}
 	.CategoryTree ul li.selected .h2-tit{position:absolute;z-index:88;background:#fff;border:1px $border solid; border-bottom:2px $border solid; border-right:0;width:139px;height:24px;line-height:24px; padding-left:29px;*margin-left:-12px;_margin-left:-12px;}
 }
+/* ======== sitemap ======== */
+#sitemap {
+	margin-top: 5px;
+	padding: 20px;
+	li ul li {list-style:none; display:inline-block; *display:inline; *zoom:1; margin: 10px;}
+}
 /* ======== login & register & errors ======== */
 .login-box {
   padding: 20px;
