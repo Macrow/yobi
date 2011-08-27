@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :get_tabs, :get_categories, :initial_search
-  #rescue_from Exception, :with => :render_all_errors
+  rescue_from Exception, :with => :render_all_errors
   
   protected
   def get_order_params

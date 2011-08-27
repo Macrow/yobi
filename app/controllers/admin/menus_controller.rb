@@ -1,6 +1,9 @@
 # coding: utf-8
 
 class Admin::MenusController < Admin::ApplicationController
+  
+  cache_sweeper :home_sweeper, :only => [:create, :update, :destroy]
+  cache_sweeper :site_sweeper, :only => [:create, :update, :destroy]
 
   def index
     @menus = Menu.scoped

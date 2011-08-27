@@ -1,5 +1,5 @@
 class HomeSweeper < ActionController::Caching::Sweeper
-  observe Product, Article, Category
+  observe Product, Article, Category, Menu
 
   def after_create(record)
     expire_homepage

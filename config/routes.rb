@@ -10,7 +10,7 @@ Yobi::Application.routes.draw do
   end
   resources :articles, :only => [:show]
   devise_for :users
-  get "my_account" => "users#show", :as => "my_account"
+  get "/my_account" => "users#show", :as => "my_account"
   get "/search" => "home#search"
   get "/sitemap" => "home#sitemap"
   get "static/:page_url" => "staticpages#show", :as => :static_page
