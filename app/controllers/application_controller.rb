@@ -23,9 +23,6 @@ class ApplicationController < ActionController::Base
   end
 
   def render_all_errors(e)
-    # log_error(e) # log the error
-    # notify_about_exception(e) # send the error notification
-    # now handle the page
     if e.is_a?(ActionController::RoutingError) || e.is_a?(ActiveRecord::RecordNotFound)
       render_404_error(e)
     else
