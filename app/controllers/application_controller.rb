@@ -25,8 +25,8 @@ class ApplicationController < ActionController::Base
   def render_all_errors(e)
     if e.is_a?(ActionController::RoutingError) || e.is_a?(ActiveRecord::RecordNotFound)
       render_404_error(e)
-    else
-      render_other_error(e)
+    #else
+      #render_other_error(e)
     end
   end
 
