@@ -210,18 +210,20 @@ module ApplicationHelper
 
   def show_view_style_icon_links
     output = ""
+    view_style_hash = {:grid => "表格", :full => "图文", :list => "列表"}
     %w{grid full list}.each do |style|
       css = params[:view_style] == style ? "current" : ""
-      output << link_to(image_tag("#{style}.png"), url_with_query_params(:view_style => style), :class => css, :title => style, :rel => "nofollow")
+      output << link_to(image_tag("#{style}.png", :alt => view_style_hash[style.to_sym]), url_with_query_params(:view_style => style), :class => css, :title => view_style_hash[style.to_sym], :rel => "nofollow")
     end
     output.html_safe
   end
 
   def show_search_view_style_icon_links
     output = ""
+    view_style_hash = {:grid => "表格", :full => "图文", :list => "列表"}
     %w{grid full list}.each do |style|
       css = params[:view_style] == style ? "current" : ""
-      output << link_to(image_tag("#{style}.png"), search_url_with_query_params(:view_style => style), :class => css, :title => style, :rel => "nofollow")
+      output << link_to(image_tag("#{style}.png", :alt => view_style_hash[style.to_sym]), search_url_with_query_params(:view_style => style), :class => css, :title => view_style_hash[style.to_sym], :rel => "nofollow")
     end
     output.html_safe
   end
@@ -237,6 +239,10 @@ module ApplicationHelper
     else
       render products
     end
+  end
+  
+  def link_to_nofollow(name, path)
+    link_to name, path, :rel => "nofollow"
   end
 
   private

@@ -1,21 +1,6 @@
 #footer
-  = link_to "关于我们", static_page_path("about"), :rel => "nofollow"
-  |
-  = link_to "网站地图", sitemap_path, :rel => "nofollow"
-  |
-  = link_to "常见问题", static_page_path("faq"), :rel => "nofollow"
-  |
-  = link_to "联系方式", static_page_path("contacts"), :rel => "nofollow"  
-  |
-  = link_to "关于我们", static_page_path("about"), :rel => "nofollow"
-  |
-  = link_to "网站地图", sitemap_path, :rel => "nofollow"
-  |
-  = link_to "常见问题", static_page_path("faq"), :rel => "nofollow"
-  |
-  = link_to "联系方式", static_page_path("contacts"), :rel => "nofollow"
+  = "#{link_to_nofollow('关于我们', static_page_path('about'))} | #{link_to_nofollow('网站地图', sitemap_path)} | #{link_to_nofollow('常见问题', static_page_path('faq'))} | #{link_to_nofollow('联系我们', static_page_path('contacts'))}".html_safe
   %br/
-  = "© 2011 #{link_to('友比科技', root_path)} 版权所有".html_safe
+  = "© 2011 - #{Time.now.year} #{link_to('友比科技', root_path)} 版权所有".html_safe
   %br/
-  Tel: XXX-XXX-XXXX ICP备案证书号:渝ICP备XXXXXXX号
-
+  联系电话：023-68686868 &nbsp;&nbsp;网站备案证书号：渝ICP备1563-3889504432号
