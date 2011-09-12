@@ -6,7 +6,7 @@
     %td 目录已被删除
   %td= show_money(product.present_price)
   %td= product.discount
-  %td= product.stock_count
+  %td= "#{product.elite ? '<span style=\'color:red\'>是</span>' : '否'}".html_safe
   %td
     = link_to "编辑", edit_admin_product_path(product), :class => "pill button"
     = link_to "评论", admin_product_comments_path(product), :class => "pill positive button"

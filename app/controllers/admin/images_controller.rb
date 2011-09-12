@@ -1,4 +1,6 @@
 class Admin::ImagesController < Admin::ApplicationController
+  
+  cache_sweeper :home_sweeper, :only => [:create, :update, :destroy]
   cache_sweeper :product_sweeper, :only => [:create, :update, :destroy]
 
   def create

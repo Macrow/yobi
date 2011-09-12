@@ -9,7 +9,7 @@ class Admin::ProductsController < Admin::ApplicationController
 
   def index
     @search = Product.search(params[:search])
-    @products = @search.includes(:category).page(params[:page])
+    @products = @search.order("created_at desc").includes(:category).page(params[:page])
     @categories = Category.get_categories_tree(true)
   end
 
