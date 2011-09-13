@@ -523,7 +523,7 @@ form.new_comment {
     float: left; }
 
 #logo {
-  width: 200px;
+  width: 252px;
   height: 60px;
   text-align: center;
   overflow: hidden;
@@ -534,7 +534,7 @@ form.new_comment {
   padding: 0; }
   #logo a {
     display: block;
-    width: 170px;
+    width: 250px;
     height: 88px;
     border: 1px; }
 

@@ -132,7 +132,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   kaminari
-  meta_search (~> 1.0.6)
+  meta_search
   mini_magick
   mysql2 (~> 0.2.7)
   nested_form

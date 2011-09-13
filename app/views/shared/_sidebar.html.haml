@@ -10,6 +10,10 @@
       = form_for @search, :url => search_path, :html => {:method => :get} do |f|
         %span= f.text_field :name_contains, :maxlength => 10
         %button{:type => "submit"} 搜 索
+  #leftbox
+    .head 在线联系
+    .body.search
+      = '<a target=blank href=http://wpa.qq.com/msgrd?V=1&Uin=1574864288&Site=www.51yobi.com&Menu=yes><img border="0" SRC=http://wpa.qq.com/pa?p=1:1574864288:12 alt="点击这里给我发消息"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a target=blank href=http://wpa.qq.com/msgrd?V=1&Uin=2364133372&Site=www.51yobi.com&Menu=yes><img border="0" SRC=http://wpa.qq.com/pa?p=1:2364133372:12 alt="点击这里给我发消息"></a>'.html_safe
   - if controller_name =~ /home|categories|products/i
     #leftbox
       .head 热销产品
