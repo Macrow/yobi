@@ -539,11 +539,11 @@ form.new_comment {
     border: 1px; }
 
 #tabs {
-  width: 740px;
-  margin: 35px 0 0 200px;
-  *margin: 18px 0 0 200px;
+  width: 680px;
+  margin: 35px 0 0 265px;
+  *margin: 18px 0 0 265px;
   /*ie7*/
-  _margin: 18px 0 0 200px;
+  _margin: 18px 0 0 265px;
   /*ie6*/ }
 
 .tabs-line {
