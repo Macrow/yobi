@@ -15,8 +15,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    # "uploads/product_images/#{Time.now.strftime("%Y-%m")}"
-    "uploads/product_images"
+    "uploads/product_images/#{model.created_at.strftime("%Y-%m")}"
   end
 
   def cache_dir
