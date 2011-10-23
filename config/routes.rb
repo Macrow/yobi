@@ -9,6 +9,7 @@ Yobi::Application.routes.draw do
     end
   end
   resources :articles, :only => [:show]
+  resources :acategories, :only => [:show]
   devise_for :users
   get "/my_account" => "users#show", :as => "my_account"
   get "/search" => "home#search"
@@ -19,6 +20,7 @@ Yobi::Application.routes.draw do
   namespace :admin do
     resources :menus
     resources :articles
+    resources :acategories
     resources :categories
     resources :staticpages
     resources :plists, :except => [:new, :show]

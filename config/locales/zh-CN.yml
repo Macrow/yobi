@@ -265,6 +265,7 @@ zh-CN:
       properties: "属性"
       article: "文章"
       staticpage: "静态页面"
+      acategory: "文章目录"
     attributes:
       user:
         login: "用户名或邮箱"
@@ -305,6 +306,8 @@ zh-CN:
         title: "题目"
         page_url: "网址"
         content: "内容"
+      acategory:
+        name: "文章目录"
     errors:
       models:
         user:

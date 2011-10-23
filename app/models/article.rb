@@ -1,6 +1,7 @@
 #coding: utf-8
 class Article < ActiveRecord::Base
   belongs_to :user
+  belongs_to :acategory
   validates_presence_of :title
   before_save :verify_safe, :generate_meta_content
 

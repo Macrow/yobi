@@ -10,7 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110717062225) do
+ActiveRecord::Schema.define(:version => 20111016160903) do
+
+  create_table "acategories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -21,8 +27,10 @@ ActiveRecord::Schema.define(:version => 20110717062225) do
     t.string   "cached_slug"
     t.string   "meta_keywords"
     t.string   "meta_description"
+    t.integer  "acategory_id"
   end
 
+  add_index "articles", ["acategory_id"], :name => "index_articles_on_acategory_id"
   add_index "articles", ["cached_slug"], :name => "index_articles_on_cached_slug", :unique => true
   add_index "articles", ["user_id"], :name => "index_articles_on_user_id"
 
@@ -180,6 +188,8 @@ ActiveRecord::Schema.define(:version => 20110717062225) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["user_name"], :name => "index_users_on_user_name", :unique => true
+
+  add_foreign_key "articles", "acategories", :name => "articles_acategory_id_fk", :dependent => :delete
 
   add_foreign_key "images", "products", :name => "images_product_id_fk", :dependent => :delete
 

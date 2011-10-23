@@ -1,0 +1,9 @@
+- title @acategory.name
+.product
+  .float_right
+    = link_to "编辑", edit_admin_acategory_path(@acategory), :class => "button"
+    = link_to "返回", admin_acategories_path, :class => "button"
+  .info
+    .title 文章类型名称
+    .content= @acategory.name
+

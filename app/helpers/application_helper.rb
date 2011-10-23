@@ -112,7 +112,7 @@ module ApplicationHelper
     return nil if controller_name == "redirect"
     output = "您现在的位置："
     output << link_to("首 页", root_path, :rel => "nofollow")
-    if controller_name =~ /categories|products/i && action_name == "show"
+    if controller_name =~ /^categories|products/i && action_name == "show"
       @category.ancestors.all.each do |c|
         output << " > " << link_to(c.name, c)
       end
@@ -122,11 +122,14 @@ module ApplicationHelper
         output << " > " << link_to(@category.name, @category)
       end
     end
+    if controller_name == "acategories" && action_name == "show"
+      output << " > " << link_to(@acategory.name, @acategory)
+    end
     if controller_name == "products" && action_name == "show"
       output << " > " << link_to(@product.name, @product)
     end
     if controller_name == "articles" && action_name == "show"
-      output << " > " << "资讯" << " > " << @article.title
+      output << " > " << link_to(@acategory.name, @acategory) << " > " << @article.title
     end
     if controller_name =~ /passwords|registrations|sessions|users/i
       output << " > " << "用户中心"

@@ -1,0 +1,7 @@
+%tr{:class => cycle(:even, :odd)}
+  %td= link_to acategory.name, [:admin, acategory]
+  %td= "/acategories/#{acategory.name.to_url}"
+  %td
+    = link_to "编辑", edit_admin_acategory_path(acategory), :class => "pill button"
+    = link_to "删除", admin_acategory_path(acategory), :method => :delete, :confirm => "Are you sure?", :class => "pill negative button"
+

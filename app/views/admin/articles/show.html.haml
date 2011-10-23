@@ -4,6 +4,13 @@
     = link_to "编辑", edit_admin_article_path(@article), :class => "button"
     = link_to "返回", admin_articles_path, :class => "button"
   .info
+    .title 文章类别
+    .content
+      - if @article.acategory.nil?
+        = "未分类"
+      - else
+        = @article.acategory.name
+  .info
     .title meta keywords
     .content= @article.meta_keywords
   .info

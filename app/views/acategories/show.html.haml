@@ -1,0 +1,6 @@
+- title_with_sitename @acategory.name
+#product
+  %h1= @acategory.name
+  %ul
+    - @articles.each do |article|
+      %li= link_to article.title, article

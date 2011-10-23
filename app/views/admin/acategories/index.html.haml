@@ -1,0 +1,11 @@
+- title "文章类型管理"
+%p
+  %table.table
+    %tbody
+      %tr
+        %th 名称
+        %th 前台链接地址
+        %th{:width => "120"} 操作
+      = render @acategories
+  = paginate @acategories
+
