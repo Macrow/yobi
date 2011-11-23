@@ -567,7 +567,7 @@ form.new_comment {
 }
 
 #logo {
-  width: 200px;
+  width: 270px;
   height: 60px;
   text-align: center;
   overflow: hidden;
@@ -578,14 +578,14 @@ form.new_comment {
   padding: 0;
   a {
 		display:block;
-		width:170px;
-		height:88px;
-		border: 1px;
+		width:180px;
+		height:30px;
+		border: 0px;
   }
 }
 
 #tabs {
-  width: 740px;
+  width: 690px;
 	margin: 35px 0 0 200px;
 	*margin:18px 0 0 200px; /*ie7*/  
 	_margin:18px 0 0 200px;/*ie6*/
@@ -713,5 +713,5 @@ a {
 /* ======== christmas ======== */
 
 .christmas-logo {
-	
+	background: url("/images/christmas-bg.gif") repeat-x scroll 0 0 transparent;
 }

@@ -523,7 +523,7 @@ form.new_comment {
     float: left; }
 
 #logo {
-  width: 252px;
+  width: 270px;
   height: 60px;
   text-align: center;
   overflow: hidden;
@@ -534,16 +534,16 @@ form.new_comment {
   padding: 0; }
   #logo a {
     display: block;
-    width: 250px;
-    height: 88px;
-    border: 1px; }
+    width: 180px;
+    height: 30px;
+    border: 0px; }
 
 #tabs {
-  width: 680px;
-  margin: 35px 0 0 265px;
-  *margin: 18px 0 0 265px;
+  width: 690px;
+  margin: 35px 0 0 200px;
+  *margin: 18px 0 0 200px;
   /*ie7*/
-  _margin: 18px 0 0 265px;
+  _margin: 18px 0 0 200px;
   /*ie6*/ }
 
 .tabs-line {
@@ -758,3 +758,7 @@ a {
   height: 200px;
   text-align: center;
   line-height: 200px; }
+
+/* ======== christmas ======== */
+.christmas-logo {
+  background: url("/images/christmas-bg.gif") repeat-x scroll 0 0 transparent; }

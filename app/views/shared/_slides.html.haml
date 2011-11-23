@@ -1,7 +1,7 @@
 #slides
   .slides_container
-    - (1..4).to_a.each do |i|
-      - slide = Settings.slides.send("slide#{i}")
+    - (0..3).to_a.each do |i|
+      - slide = Settings.slides.send("slide#{i+1}")
       = image_tag slide.image, :size => "470x220", :alt => slide.title
 = include_slide_js
 
