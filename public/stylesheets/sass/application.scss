@@ -133,7 +133,7 @@ h1.nav-path {
   }
   .body {
     padding: 0 5px;
-    height: 180px;
+    height: 190px;
     line-height: 19px;
     a {
       text-decoration: none;
@@ -567,7 +567,7 @@ form.new_comment {
 }
 
 #logo {
-  width: 270px;
+  width: 280px;
   height: 60px;
   text-align: center;
   overflow: hidden;
@@ -578,17 +578,17 @@ form.new_comment {
   padding: 0;
   a {
 		display:block;
-		width:180px;
-		height:30px;
+		width:280px;
+		height:60px;
 		border: 0px;
   }
 }
 
 #tabs {
-  width: 690px;
-	margin: 35px 0 0 200px;
-	*margin:18px 0 0 200px; /*ie7*/  
-	_margin:18px 0 0 200px;/*ie6*/
+  width: 660px;
+	margin: 35px 0 0 280px;
+	*margin:18px 0 0 280px; /*ie7*/  
+	_margin:18px 0 0 280px;/*ie6*/
 }
 
 .tabs-line {
